@@ -1,0 +1,2759 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   ICMAB — Institute of Cost and Management Accountants of Bangladesh
+  </title>
+  <meta content="ICMAB is the national body of professional Cost and Management Accountants of Bangladesh. Offering globally recognized CMA certification." name="description"/>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script>
+   tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              merriweather: ["Merriweather", "Georgia", "serif"],
+              oswald: ["Oswald", "Arial", "sans-serif"],
+            },
+            colors: {
+              brand: { 900: "#020d3b", 800: "#021d6f", 700: "#0c44a8", 600: "#0c68e9", 500: "#1a7af8" },
+            }
+          },
+        },
+      };
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&amp;family=Merriweather:wght@300;400;700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+      html{scroll-behavior:smooth;}
+      body{font-family:'Merriweather',Georgia,serif;background:#fff;color:#1a1a2e;overflow-x:hidden;}
+
+      /* ─── Fonts ─── */
+      .font-oswald{font-family:'Oswald',Arial,sans-serif;}
+
+      /* ─── Scroll-reveal ─── */
+      .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+      .reveal.visible{opacity:1;transform:none;}
+      .reveal-left{opacity:0;transform:translateX(-32px);transition:opacity .65s ease,transform .65s ease;}
+      .reveal-left.visible{opacity:1;transform:none;}
+      .reveal-right{opacity:0;transform:translateX(32px);transition:opacity .65s ease,transform .65s ease;}
+      .reveal-right.visible{opacity:1;transform:none;}
+      .reveal-scale{opacity:0;transform:scale(.93);transition:opacity .6s ease,transform .6s ease;}
+      .reveal-scale.visible{opacity:1;transform:none;}
+
+      /* ─── Gradient text ─── */
+      .grad-text{background:linear-gradient(to right,rgb(2,29,111),rgba(2,29,111,.28));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+      .grad-text-white{background:linear-gradient(to right,#fff,rgba(255,255,255,.38));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+
+      /* ─── Header inside hero (transparent overlay) ─── */
+      #main-header{position:absolute;top:0;left:0;right:0;z-index:900;background:transparent;border:none;transition:background .3s,box-shadow .3s;}
+      #main-header.scrolled{position:fixed;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.12);}
+      .header-utility a{color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.02em;transition:color .2s;}
+      .header-utility a:hover{color:rgba(255,255,255,.8);}
+      .header-utility .sep{color:rgba(255,255,255,.4);margin:0 .35rem;}
+      #main-header.scrolled .header-utility a{color:#1a1a2e;}
+      #main-header.scrolled .header-utility a:hover{color:#0c68e9;}
+      #main-header.scrolled .header-utility .sep{color:#cbd5e1;}
+      .btn-menu-black{display:inline-flex;align-items:center;gap:.5rem;background:#111827;color:#fff;font-family:'Oswald',Arial,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.04em;padding:.55rem 1.1rem;border:none;cursor:pointer;transition:background .2s;}
+      .btn-menu-black:hover{background:#000;}
+      .btn-search-link{display:inline-flex;align-items:center;gap:.35rem;background:none;border:none;color:#fff;font-family:'Oswald',Arial,sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;padding:.4rem .2rem;}
+      .btn-search-link:hover{color:rgba(255,255,255,.8);}
+      #main-header.scrolled .btn-search-link{color:#1a1a2e;}
+      #main-header.scrolled .btn-search-link:hover{color:#0c68e9;}
+
+      /* ─── Header logo ─── */
+      .header-logo-wrap{display:inline-flex;align-items:center;line-height:0;flex-shrink:0;background:transparent;padding:0;}
+      .header-logo-wrap img{display:block;height:2.75rem;width:auto;max-width:min(280px,50vw);object-fit:contain;}
+      @media(min-width:768px){.header-logo-wrap img{height:3.5rem;max-width:320px;}}
+      .header-logo-wrap .logo-scrolled{display:none;}
+      #main-header.scrolled .header-logo-wrap{background:#000;padding:.35rem .6rem;}
+      #main-header.scrolled .logo-hero{display:none;}
+      #main-header.scrolled .logo-scrolled{display:block;}
+
+      /* ─── Hero home (ICMAB original) ─── */
+      .hero-home{position:relative;min-height:100svh;max-height:1080px;overflow:hidden;display:flex;flex-direction:column;}
+      .hero-home-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.15) 0%,rgba(0,0,0,.35) 55%,rgba(0,0,0,.55) 100%);z-index:1;}
+      .hero-home-content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem 8rem;}
+      .hero-home h1{font-family:'Oswald',Arial,sans-serif;font-weight:700;color:#fff;text-transform:uppercase;line-height:1.12;letter-spacing:.02em;font-size:clamp(1.75rem,5vw,3.25rem);max-width:920px;}
+      .hero-home .hero-sub{color:rgba(255,255,255,.92);font-family:'Oswald',Arial,sans-serif;font-size:clamp(.95rem,2vw,1.15rem);font-weight:400;margin-top:1.25rem;max-width:640px;}
+      .hero-ghost-btn{display:inline-block;margin-top:1.75rem;padding:.85rem 1.75rem;border:1.5px solid #fff;color:#fff;font-family:'Oswald',Arial,sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;transition:background .25s,color .25s;}
+      .hero-ghost-btn:hover{background:#fff;color:#111827;}
+      .hero-bottom{position:absolute;bottom:0;left:0;right:0;z-index:3;display:grid;grid-template-columns:1fr;border-top:1px solid rgba(255,255,255,.15);}
+      @media(min-width:768px){.hero-bottom{grid-template-columns:repeat(3,1fr);}}
+      .hero-bottom a{padding:1.25rem 1.5rem;color:#fff;text-decoration:none;transition:background .2s;border-bottom:1px solid rgba(255,255,255,.1);}
+      @media(min-width:768px){.hero-bottom a{border-bottom:none;border-right:1px solid rgba(255,255,255,.12);}.hero-bottom a:last-child{border-right:none;}}
+      .hero-bottom a:hover{background:rgba(255,255,255,.08);}
+      .hero-bottom h6{font-family:'Oswald',Arial,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem;}
+      .hero-bottom p{font-size:.72rem;line-height:1.5;color:rgba(255,255,255,.78);}
+
+      /* ─── Top ticker ─── */
+      @keyframes ticker{0%{transform:translateX(100%)}100%{transform:translateX(-100%)}}
+      .ticker-inner{display:inline-block;white-space:nowrap;animation:ticker 32s linear infinite;}
+      .ticker-inner:hover{animation-play-state:paused;}
+
+      /* ─── Marquee affiliations ─── */
+      @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+      .marquee-track{animation:marquee 35s linear infinite;display:flex;align-items:center;width:max-content;gap:5rem;}
+      .marquee-track:hover{animation-play-state:paused;}
+      .partner-logo-box{flex-shrink:0;display:flex;align-items:center;justify-content:center;height:5rem;min-width:9rem;padding:0 1rem;}
+      .partner-logo-box img{height:3.5rem;max-width:10rem;object-fit:contain;filter:grayscale(1);opacity:.85;transition:filter .25s,opacity .25s,transform .25s;}
+      .partner-logo-box:hover img{filter:grayscale(0);opacity:1;transform:scale(1.05);}
+
+      /* ─── Mobile drawer ─── */
+      #mobile-drawer{transform:translateX(-100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
+      #mobile-drawer.open{transform:translateX(0);}
+      #drawer-overlay{opacity:0;pointer-events:none;transition:opacity .32s ease;}
+      #drawer-overlay.open{opacity:1;pointer-events:auto;}
+
+      /* ─── Dropdown nav ─── */
+      .nav-dropdown{display:none;position:absolute;top:100%;left:0;min-width:220px;background:#fff;box-shadow:0 8px 32px rgba(0,0,0,.14);border-top:3px solid #0c68e9;z-index:200;}
+      .nav-item:hover .nav-dropdown{display:block;}
+      .nav-dropdown a{display:block;padding:10px 18px;font-size:.85rem;color:#1a1a2e;font-weight:600;border-bottom:1px solid #f1f5f9;transition:background .15s,color .15s;}
+      .nav-dropdown a:hover{background:#eff6ff;color:#0c68e9;}
+
+      /* ─── Drawer accordion ─── */
+      .drawer-sub{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+      .drawer-sub.open{max-height:400px;}
+      .drawer-arrow{transition:transform .3s;}
+      .drawer-group.open .drawer-arrow{transform:rotate(180deg);}
+
+      /* ─── Search panel ─── */
+      #search-panel{max-height:0;overflow:hidden;transition:max-height .3s ease;background:#1e3a8a;}
+      #search-panel.open{max-height:72px;}
+
+      /* ─── Tab active ─── */
+      .tab-btn{border-bottom:3px solid transparent;transition:color .2s,border-color .2s;}
+      .tab-btn.active{color:#fde047;border-bottom-color:#fde047;}
+
+      /* ─── FAQ ─── */
+      .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
+      .faq-answer.open{max-height:500px;}
+      .faq-icon{transition:transform .3s;}
+      .faq-item.open .faq-icon{transform:rotate(45deg);}
+      .faq-item.open{border-color:#0c68e9;}
+
+      /* ─── Chat panel ─── */
+      #chat-panel{transform:translateY(16px) scale(.97);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease;}
+      #chat-panel.open{transform:none;opacity:1;pointer-events:auto;}
+
+      /* ─── Story carousel ─── */
+      #story-inner{transition:transform .45s cubic-bezier(.4,0,.2,1);}
+
+      /* ─── Hover link fill ─── */
+      .hover-fill{position:relative;overflow:hidden;}
+      .hover-fill::before{content:'';position:absolute;inset:0;background:#fbbf24;width:0;z-index:0;transition:width .22s ease;}
+      .hover-fill:hover::before{width:100%;}
+      .hover-fill span,.hover-fill img{position:relative;z-index:1;}
+
+      /* ─── Ping animation on chat btn ─── */
+      @keyframes ping{75%,100%{transform:scale(1.8);opacity:0;}}
+      .ping-dot::before{content:'';position:absolute;inset:0;border-radius:50%;background:rgba(37,99,235,.5);animation:ping 1.5s cubic-bezier(0,0,.2,1) infinite;}
+
+      /* ─── Notice board ─── */
+      @keyframes scroll-v{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}
+      .notice-scroll{animation:scroll-v 18s linear infinite;}
+      .notice-scroll:hover{animation-play-state:paused;}
+
+      /* ─── Section underline ─── */
+      .section-title{position:relative;display:inline-block;}
+      .section-title::after{content:'';position:absolute;left:0;bottom:-8px;width:56px;height:4px;background:#021d6f;border-radius:2px;}
+      .section-title.center::after{left:50%;transform:translateX(-50%);}
+
+      /* ─── Image zoom on hover ─── */
+      .img-zoom{overflow:hidden;}
+      .img-zoom img{transition:transform .5s ease;}
+      .img-zoom:hover img{transform:scale(1.06);}
+
+      /* ─── Video mute/play state ─── */
+      #muted-svg{display:none;}
+      .vid-muted #unmuted-svg{display:none;}
+      .vid-muted #muted-svg{display:block;}
+      #paused-svg{display:none;}
+      .vid-paused #play-svg{display:none;}
+      .vid-paused #paused-svg{display:block;}
+
+      /* ─── Scrollbar slim ─── */
+      ::-webkit-scrollbar{width:6px;height:6px;}
+      ::-webkit-scrollbar-track{background:#f1f5f9;}
+      ::-webkit-scrollbar-thumb{background:#94a3b8;border-radius:3px;}
+
+      /* ─── Active nav link ─── */
+      header nav a.active-link{color:#0c68e9;font-weight:700;}
+
+      /* ─── About ICMAB section ─── */
+      .icmab-highlight{position:relative;display:inline-block;}
+      .icmab-highlight::after{content:'';position:absolute;inset:-6px -10px -4px -8px;border:3px solid #facc15;border-radius:50%;transform:rotate(-4deg);opacity:.85;pointer-events:none;}
+      .about-tab{flex:1;text-align:center;padding:10px 8px;font-size:.82rem;font-weight:700;color:#021d6f;background:#e7f0fd;border:1px solid #c7daf7;cursor:pointer;transition:background .2s,color .2s,border-color .2s;font-family:'Merriweather',Georgia,serif;}
+      .about-tab:hover{background:#d4e6fc;}
+      .about-tab.active{background:#0c68e9;color:#fff;border-color:#0c68e9;}
+      .about-tab-panel{display:none;animation:fadeTab .35s ease;}
+      .about-tab-panel.active{display:block;}
+      @keyframes fadeTab{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+
+      /* ─── Interactive map ─── */
+      .bd-map-wrap{position:relative;width:100%;height:100%;min-height:380px;padding:12px 16px 20px;}
+      #bd-map-svg{width:100%;height:100%;display:block;}
+      .bd-land{fill:#dce9fb;stroke:#070d45;stroke-width:.65;transition:fill .2s;}
+      .bd-land:hover{fill:#c5daf8;}
+      .map-marker{cursor:pointer;}
+      .map-marker .pin-ring{opacity:0;transition:opacity .25s,transform .25s;transform-box:fill-box;transform-origin:center;}
+      .map-marker:hover .pin-ring,.map-marker.active .pin-ring{opacity:1;}
+      .map-marker .pin-icon{fill:#070d45;transition:fill .2s,transform .2s;transform-box:fill-box;transform-origin:12px 22px;}
+      .map-marker:hover .pin-icon,.map-marker.active .pin-icon{fill:#0c68e9;transform:scale(1.1);}
+      #map-tooltip{position:absolute;z-index:20;min-width:170px;max-width:220px;background:#fff;border:1px solid #dbeafe;border-radius:6px;padding:10px 12px;box-shadow:0 8px 24px rgba(2,29,111,.16);pointer-events:none;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;}
+      #map-tooltip.show{opacity:1;visibility:visible;}
+      #map-tooltip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:7px solid transparent;border-top-color:#fff;}
+      #map-tooltip h6{font-family:'Oswald',Arial,sans-serif;font-size:.78rem;font-weight:700;color:#021d6f;margin-bottom:3px;}
+      #map-tooltip p{font-size:.68rem;color:#64748b;line-height:1.45;}
+      #map-tooltip .tag{display:inline-block;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 6px;border-radius:3px;margin-bottom:4px;}
+      #map-tooltip .tag.hq{background:#fef3c7;color:#92400e;}
+      #map-tooltip .tag.branch{background:#dbeafe;color:#1e40af;}
+      #map-tooltip .tag.center{background:#dcfce7;color:#166534;}
+
+      /* ─── Hero / promo background motion (ICMAB video2.avif) ─── */
+      .hero-anim{animation:heroKen 22s ease-in-out infinite alternate;transform-origin:center center;}
+      .hero-anim.paused{animation-play-state:paused;}
+      @keyframes heroKen{0%{transform:scale(1);}100%{transform:scale(1.05);}}
+
+      /* ─── Welcome popup (ICMAB site open) ─── */
+      #welcome-popup{position:fixed;inset:0;z-index:2000;background:rgba(2,13,59,.72);display:none;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);}
+      #welcome-popup.show{display:flex;}
+      .welcome-popup-box{background:#fff;max-width:560px;width:100%;border-radius:8px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.28);animation:popIn .35s ease;}
+      @keyframes popIn{from{opacity:0;transform:scale(.94) translateY(12px);}to{opacity:1;transform:none;}}
+      .welcome-popup-head{background:#021d6f;color:#fff;padding:.85rem 1rem;display:flex;align-items:center;justify-content:space-between;}
+      .welcome-popup-head h3{font-family:'Oswald',Arial,sans-serif;font-size:1rem;font-weight:700;}
+      .welcome-popup-close{width:2rem;height:2rem;border:none;background:rgba(255,255,255,.15);color:#fff;border-radius:50%;cursor:pointer;font-size:1.1rem;line-height:1;}
+      .welcome-popup-close:hover{background:rgba(255,255,255,.28);}
+      .welcome-slider-wrap{position:relative;background:#f8fafc;aspect-ratio:16/10;overflow:hidden;}
+      .welcome-slide{position:absolute;inset:0;opacity:0;transition:opacity .5s ease;}
+      .welcome-slide.active{opacity:1;}
+      .welcome-slide img{width:100%;height:100%;object-fit:cover;}
+      .welcome-popup-foot{padding:.75rem 1rem;border-top:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;}
+      .welcome-dont-show{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:#64748b;cursor:pointer;}
+      .welcome-popup-actions{display:flex;gap:.5rem;}
+      .welcome-btn{border:none;padding:.5rem 1rem;font-size:.78rem;font-weight:700;border-radius:4px;cursor:pointer;font-family:'Oswald',Arial,sans-serif;}
+      .welcome-btn-dismiss{background:#e2e8f0;color:#334155;}
+      .welcome-btn-primary{background:#0c68e9;color:#fff;}
+      .welcome-btn-primary:hover{background:#0c44a8;}
+
+      /* ─── Promo video embed ─── */
+      #promo-video{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:0;}
+      .promo-videos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;}
+      .promo-vid-card{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;cursor:pointer;box-shadow:0 4px 16px rgba(2,29,111,.12);}
+      .promo-vid-card img{width:100%;height:100%;object-fit:cover;}
+      .promo-vid-card::after{content:'';position:absolute;inset:0;background:rgba(2,13,59,.25);}
+      .promo-vid-card .play-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;}
+      .promo-vid-card .play-icon span{width:3rem;height:3rem;background:rgba(255,255,255,.92);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#021d6f;font-size:1.1rem;box-shadow:0 4px 12px rgba(0,0,0,.2);}
+  </style>
+  <link as="image" fetchpriority="high" href="assets/icmab/video2.avif" rel="preload" type="image/avif"/>
+  <script src="/load.js">
+  </script>
+  <script src="/static/anima.min.js" type="module">
+  </script>
+ </head>
+ <body>
+  <!-- ══════════════════════════════ WELCOME POPUP ═════════════════════════ -->
+  <div id="welcome-popup" role="dialog" aria-modal="true" aria-label="ICMAB Welcome">
+   <div class="welcome-popup-box">
+    <div class="welcome-popup-head">
+     <h3>📘 Welcome to ICMAB</h3>
+     <button class="welcome-popup-close" aria-label="Close" onclick="closeWelcomePopup()">✕</button>
+    </div>
+    <div class="welcome-slider-wrap" id="welcome-slider">
+     <div class="welcome-slide active"><img alt="Welcome Book 1" src="assets/welcome/welcome_1.jpg"/></div>
+     <div class="welcome-slide"><img alt="Welcome Book 2" src="assets/welcome/welcome_2.jpg"/></div>
+     <div class="welcome-slide"><img alt="Welcome Book 3" src="assets/welcome/welcome_3.jpg"/></div>
+     <div class="welcome-slide"><img alt="Welcome Book 4" src="assets/welcome/welcome_4.jpg"/></div>
+     <div class="welcome-slide"><img alt="Welcome Book 5" src="assets/welcome/welcome_5.jpg"/></div>
+    </div>
+    <div class="welcome-popup-foot">
+     <label class="welcome-dont-show"><input id="welcome-dont-show" type="checkbox"/> Don't show again</label>
+     <div class="welcome-popup-actions">
+      <button class="welcome-btn welcome-btn-dismiss" onclick="closeWelcomePopup()">Close</button>
+      <a class="welcome-btn welcome-btn-primary" href="https://icmab.gov.bd/welcome-book/" target="_blank">View Welcome Book →</a>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- ══════════════════════════════ DRAWER OVERLAY ══════════════════════════ -->
+  <div class="fixed inset-0 bg-black/60 z-[1100]" id="drawer-overlay" onclick="closeDrawer()">
+  </div>
+  <!-- ══════════════════════════════ MOBILE SIDE DRAWER ═════════════════════ -->
+  <aside class="fixed top-0 left-0 h-full w-[300px] bg-[#020d3b] text-white z-[1200] overflow-y-auto flex flex-col shadow-2xl" id="mobile-drawer">
+   <!-- Drawer header -->
+   <div class="flex items-center justify-between px-4 py-3 bg-[#021d6f] border-b border-white/10 shrink-0">
+    <img alt="ICMAB Logo" class="h-11 w-auto object-contain" src="assets/icmab/icmab-logo.png"/>
+    <button aria-label="Close" class="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-lg" onclick="closeDrawer()">
+     ✕
+    </button>
+   </div>
+   <!-- Drawer nav -->
+   <nav class="flex flex-col flex-1 p-3">
+    <!-- About ICMAB -->
+    <div class="drawer-group">
+     <button class="w-full flex items-center justify-between px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold border-b border-white/10" onclick="toggleDrawerGroup(this)">
+      <span class="flex items-center gap-2">
+       <span class="text-base">
+        🏛️
+       </span>
+       About ICMAB
+      </span>
+      <span class="drawer-arrow text-xs opacity-60">
+       ▼
+      </span>
+     </button>
+     <div class="drawer-sub pl-4">
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/management/">
+       Management
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/history/">
+       History
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/mission/">
+       Vision &amp; Mission
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300" href="https://icmab.gov.bd/campus-life/">
+       Campus Life
+      </a>
+     </div>
+    </div>
+    <!-- Member -->
+    <div class="drawer-group">
+     <button class="w-full flex items-center justify-between px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold border-b border-white/10" onclick="toggleDrawerGroup(this)">
+      <span class="flex items-center gap-2">
+       <span class="text-base">
+        👤
+       </span>
+       Member
+      </span>
+      <span class="drawer-arrow text-xs opacity-60">
+       ▼
+      </span>
+     </button>
+     <div class="drawer-sub pl-4">
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/membership/">
+       Membership
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/desk-of-members-affair/">
+       Desk of Member's Affair
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300" href="https://icmab.gov.bd/cpd-events/">
+       CPD Events
+      </a>
+     </div>
+    </div>
+    <!-- Student -->
+    <div class="drawer-group">
+     <button class="w-full flex items-center justify-between px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold border-b border-white/10" onclick="toggleDrawerGroup(this)">
+      <span class="flex items-center gap-2">
+       <span class="text-base">
+        🎓
+       </span>
+       Student
+      </span>
+      <span class="drawer-arrow text-xs opacity-60">
+       ▼
+      </span>
+     </button>
+     <div class="drawer-sub pl-4">
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/tab/2/">
+       CMA Program
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/tab/3/">
+       Fees &amp; Charges
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300 border-b border-white/5" href="https://icmab.gov.bd/tab/4/">
+       Financial Aid
+      </a>
+      <a class="block py-2.5 px-3 text-sm text-white/80 hover:text-yellow-300" href="https://icmab.gov.bd/notice/">
+       Student Notice Board
+      </a>
+     </div>
+    </div>
+    <!-- Resources -->
+    <a class="flex items-center gap-2 px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold border-b border-white/10" href="https://icmab.gov.bd/tab/18/">
+     <span class="text-base">
+      📚
+     </span>
+     Resources
+    </a>
+    <!-- Notice -->
+    <a class="flex items-center gap-2 px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold border-b border-white/10" href="https://icmab.gov.bd/notice/">
+     <span class="text-base">
+      🔔
+     </span>
+     Notice
+    </a>
+    <!-- My ICMAB -->
+    <a class="flex items-center gap-2 px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold border-b border-white/10" href="https://erp.icmab.gov.bd/erp_icmab/Users/Login.aspx">
+     <span class="text-base">
+      🔐
+     </span>
+     My ICMAB
+    </a>
+    <!-- Verify CMA -->
+    <a class="flex items-center gap-2 px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold border-b border-white/10" href="https://icmab.gov.bd/verify-cma/">
+     <span class="text-base">
+      ✅
+     </span>
+     Verify CMA
+    </a>
+    <!-- Contact -->
+    <a class="flex items-center gap-2 px-3 py-3 rounded hover:bg-white/10 text-sm font-semibold" href="https://icmab.gov.bd/Contact-Us-2026/">
+     <span class="text-base">
+      📞
+     </span>
+     Contact
+    </a>
+   </nav>
+   <!-- Drawer footer CTA -->
+   <div class="p-4 shrink-0 border-t border-white/10">
+    <a class="flex items-center justify-center gap-2 w-full bg-yellow-400 text-[#021d6f] font-bold py-3 rounded-lg text-sm hover:bg-yellow-300" href="https://erp.icmab.gov.bd/">
+     📋 Apply Now
+    </a>
+    <div class="flex items-center justify-center gap-4 mt-4">
+     <a class="text-white/70 hover:text-white text-xl" href="https://www.facebook.com/icmabofficial">
+      f
+     </a>
+     <a class="text-white/70 hover:text-white font-bold text-sm" href="https://www.linkedin.com/company/the-institute-of-cost-and-management-accountants">
+      in
+     </a>
+     <a class="text-white/70 hover:text-white text-lg" href="#">
+      🐦
+     </a>
+     <a class="text-white/70 hover:text-white text-lg" href="#">
+      📸
+     </a>
+    </div>
+   </div>
+  </aside>
+  <!-- ══════════════════════════════ HERO (header inside) ═════════════════════ -->
+  <section class="hero-home">
+   <img alt="" class="absolute inset-0 w-full h-full object-cover z-0 hero-anim" fetchpriority="high" id="hero-bg" src="assets/icmab/video2.avif"/>
+   <!-- Header overlay on hero -->
+   <header class="font-oswald" id="main-header">
+    <div id="search-panel">
+     <div class="max-w-[1280px] mx-auto px-6 flex items-center gap-3 h-[52px]">
+      <svg class="w-5 h-5 text-white shrink-0" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      <input class="flex-1 bg-transparent text-white placeholder-white/50 outline-none text-sm font-semibold" id="search-input" onkeydown="if(event.key==='Enter'){alert('Search: '+this.value)}" placeholder="Search ICMAB… (press Enter)" type="text"/>
+      <button class="text-white/70 hover:text-white text-2xl leading-none" onclick="toggleSearch()">
+       ✕
+      </button>
+     </div>
+    </div>
+    <div class="max-w-[1280px] mx-auto px-4 md:px-6 py-4 md:py-5">
+     <div class="flex items-center justify-between gap-4">
+      <a class="header-logo-wrap" href="/">
+       <img alt="ICMAB Logo" class="logo-hero" src="assets/anima/logo-transparent.png"/>
+       <img alt="ICMAB Logo" class="logo-scrolled" src="assets/icmab/icmab-logo.png"/>
+      </a>
+      <div class="flex flex-col items-end gap-2">
+       <nav class="header-utility hidden md:flex items-center flex-wrap justify-end">
+        <a href="https://icmab.gov.bd/membership/">Member</a><span class="sep">|</span>
+        <a href="https://icmab.gov.bd/tab/2/">Student</a><span class="sep">|</span>
+        <a href="https://icmab.gov.bd/tab/18/">Resources</a><span class="sep">|</span>
+        <a href="https://icmab.gov.bd/notice/">Notice</a><span class="sep">|</span>
+        <a href="https://erp.icmab.gov.bd/erp_icmab/Users/Login.aspx">My ICMAB</a><span class="sep">|</span>
+        <a href="https://erp.icmab.gov.bd/">Apply Now</a><span class="sep">|</span>
+        <a href="https://icmab.gov.bd/verify-cma/">Verify CMA</a><span class="sep">|</span>
+        <a href="https://icmab.gov.bd/Contact-Us-2026/">Contact</a>
+       </nav>
+       <div class="flex items-center gap-3">
+        <button class="btn-search-link" onclick="toggleSearch()">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          </path>
+         </svg>
+         Search
+        </button>
+        <button class="btn-menu-black" onclick="openDrawer()">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+          </path>
+         </svg>
+         Menu
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </header>
+   <div class="hero-home-overlay"></div>
+   <div class="hero-home-content reveal">
+    <h1>
+     Be a Proud Professional
+     <br/>
+     Cost and Management
+     <br/>
+     Accountant
+    </h1>
+    <p class="hero-sub">
+     Learn Smart, Lead Global – The Future of Accounting Starts Here
+    </p>
+    <a class="hero-ghost-btn" href="https://icmab.gov.bd/digital-experience-centre/">
+     Discover Digital Experience Centre
+    </a>
+   </div>
+   <div class="hero-bottom">
+    <a href="https://icmab.gov.bd/management/">
+     <h6>Learn About ICMAB</h6>
+     <p>Bangladesh's national body of professional Cost and Management Accountants</p>
+    </a>
+    <a href="https://icmab.gov.bd/digital-experience-centre/">
+     <h6>CMA Digital Ecosystem</h6>
+     <p>Experience the Digital Ecosystem of the CMA Program</p>
+    </a>
+    <a href="https://icmab.gov.bd/news/">
+     <h6>Latest News</h6>
+     <p>Explore ICMAB's news and Events</p>
+    </a>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ NOTICE TICKER BAR ══════════════════════ -->
+  <div class="bg-[#021d6f] border-t border-white/10">
+   <div class="max-w-[1280px] mx-auto px-6 flex items-center h-10">
+    <span class="shrink-0 bg-yellow-400 text-[#021d6f] font-oswald font-bold text-xs px-3 py-1 rounded-sm mr-4 tracking-wider">
+     NOTICE
+    </span>
+    <div class="flex-1 overflow-hidden">
+     <div class="ticker-inner text-white/85 text-xs font-semibold">
+      📌 CMA Examination — July 2026 Session Registration Open
+             |  📌 Admission: 2026 July–December Session Now Open
+             |  📌 CPD Seminar: Financial Reporting Standards, June
+            15, 2026, Dhaka  |  📌 New Circular: Amendment to CMA
+            Bye-Laws 2026  |  📌 ICMAB Webinar: Corporate Governance
+            &amp; Independent Directors — Register Now
+     </div>
+    </div>
+    <a class="shrink-0 ml-4 text-yellow-400 text-xs font-bold hover:underline" href="https://icmab.gov.bd/notice/">
+     All Notices →
+    </a>
+   </div>
+  </div>
+  <!-- ══════════════════════════════ TABS SECTION ═══════════════════════════ -->
+  <section class="relative overflow-hidden" style="background:#0d1d56 url('assets/icmab/home-tab.png') center/cover fixed;">
+   <div class="absolute inset-0 bg-[#0d1d56]/92">
+   </div>
+   <div class="relative z-10 max-w-[1100px] mx-auto px-6 py-16">
+    <!-- Tab buttons -->
+    <div class="flex border-b border-white/20 mb-10">
+     <button class="tab-btn active flex-1 flex flex-col items-center gap-2 py-5 text-yellow-300 font-oswald text-base md:text-lg font-semibold" data-tab="cma" onclick="switchTab('cma')">
+      <img alt="" class="w-9 h-9" src="assets/anima/solar--notebook-bookmark-bold-duotone_2wW8amE.png"/>
+      Become a CMA
+     </button>
+     <button class="tab-btn flex-1 flex flex-col items-center gap-2 py-5 text-white/70 font-oswald text-base md:text-lg font-semibold hover:text-white" data-tab="students" onclick="switchTab('students')">
+      <img alt="" class="w-9 h-9" src="assets/anima/ph--student-fill.png"/>
+      Students
+     </button>
+     <button class="tab-btn flex-1 flex flex-col items-center gap-2 py-5 text-white/70 font-oswald text-base md:text-lg font-semibold hover:text-white" data-tab="members" onclick="switchTab('members')">
+      <img alt="" class="w-9 h-9" src="assets/anima/solar--shield-user-bold_zVHhMAr.png"/>
+      Members
+     </button>
+    </div>
+    <!-- Tab: Become a CMA -->
+    <div class="tab-panel" id="tab-cma">
+     <div class="flex flex-wrap -m-2">
+      <!-- Left column -->
+      <div class="w-full md:w-1/2 p-2 flex flex-col gap-4">
+       <div class="relative h-[400px] rounded-sm overflow-hidden shadow-xl img-zoom">
+        <img alt="Explore the benefits of being a CMA" class="w-full h-full object-cover" src="assets/anima/ChatGPT_Image_Jan_15_2026_02_15_16_PM_GE02nQd.jpg"/>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-5">
+         <h6 class="text-white font-bold text-lg font-oswald mb-2">
+          Explore the benefits of being a CMA
+         </h6>
+         <a class="inline-flex items-center gap-1.5 bg-[#0c68e9] text-white text-xs font-bold px-3 py-2 rounded-sm hover:bg-[#0c44a8]" href="https://icmab.gov.bd/tab/2/">
+          Read more →
+         </a>
+        </div>
+       </div>
+       <div class="flex gap-3">
+        <a class="flex-1 bg-[#0c68e9] hover:bg-[#0c44a8] rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors group" href="https://icmab.gov.bd/tab/2/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/CMA_Prog.png"/>
+         <div>
+          <h6 class="text-white text-sm font-bold font-oswald">
+           CMA Program
+          </h6>
+         </div>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs group-hover:bg-white/30">
+           →
+          </span>
+         </div>
+        </a>
+        <a class="flex-1 bg-[#0e6ea8] hover:bg-[#0c5a8a] rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors group" href="https://icmab.gov.bd/tab/3/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/hat.png"/>
+         <div>
+          <h6 class="text-white text-sm font-bold font-oswald">
+           CMA Entry
+          </h6>
+         </div>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs group-hover:bg-white/30">
+           →
+          </span>
+         </div>
+        </a>
+       </div>
+      </div>
+      <!-- Right column -->
+      <div class="w-full md:w-1/2 p-2 flex flex-col gap-3">
+       <div class="flex gap-3">
+        <a class="flex-1 bg-[#0c68e9] hover:bg-[#0c44a8] rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors group" href="https://icmab.gov.bd/tab/3/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/Fees.png"/>
+         <h6 class="text-white text-sm font-bold font-oswald">
+          Fees and Charges
+         </h6>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
+           →
+          </span>
+         </div>
+        </a>
+        <a class="flex-1 bg-[#0c68e9] hover:bg-[#0c44a8] rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors group" href="https://icmab.gov.bd/tab/4/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/Aid_qiPrI0A.png"/>
+         <h6 class="text-white text-sm font-bold font-oswald">
+          Financial Aid
+         </h6>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
+           →
+          </span>
+         </div>
+        </a>
+       </div>
+       <div class="grid grid-cols-2 gap-3">
+        <a class="bg-[#0c68e9] hover:bg-[#0c44a8] rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors" href="https://icmab.gov.bd/exemption-policy/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/policy-icon-17.png"/>
+         <h6 class="text-white text-sm font-bold font-oswald">
+          Exemption Policy
+         </h6>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
+           →
+          </span>
+         </div>
+        </a>
+        <a class="bg-[#22c55e] hover:bg-[#16a34a] rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors" href="https://icmab.gov.bd/facilities/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/Facilities.png"/>
+         <h6 class="text-white text-sm font-bold font-oswald">
+          Facilities at ICMAB
+         </h6>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
+           →
+          </span>
+         </div>
+        </a>
+        <a class="bg-[#0c68e9] hover:bg-[#0c44a8] rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors" href="https://icmab.gov.bd/faqs/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/FAQ.png"/>
+         <h6 class="text-white text-sm font-bold font-oswald">
+          FAQs
+         </h6>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white text-xs">
+           →
+          </span>
+         </div>
+        </a>
+        <a class="bg-yellow-400 hover:bg-yellow-300 rounded-sm p-4 flex flex-col justify-between h-[180px] transition-colors" href="https://icmab.gov.bd/Contact-Us-2026/">
+         <img alt="" class="w-5 h-5 object-contain" src="assets/anima/Help.png"/>
+         <h6 class="text-[#021d6f] text-sm font-bold font-oswald">
+          Help Desk
+         </h6>
+         <div class="flex justify-end">
+          <span class="w-7 h-7 rounded-full bg-[#021d6f]/20 flex items-center justify-center text-[#021d6f] text-xs">
+           →
+          </span>
+         </div>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Tab: Students -->
+    <div class="tab-panel hidden" id="tab-students">
+     <div class="flex flex-wrap -m-3">
+      <div class="w-full md:w-1/2 p-3">
+       <div class="flex flex-col gap-4">
+        <div class="relative h-[300px] img-zoom overflow-hidden rounded-sm">
+         <img alt="Student Resources" class="w-full h-full object-cover" src="assets/anima/home-summary.webp"/>
+         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-5">
+          <div>
+           <h5 class="text-white font-oswald font-bold text-xl mb-1">
+            Student Portal
+           </h5>
+           <p class="text-white/70 text-sm">
+            Access all student resources, notices, and study
+                        materials
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+         <a class="bg-[#0c68e9] rounded-sm p-4 text-white hover:bg-[#0c44a8] transition-colors" href="https://icmab.gov.bd/exam-schedule/">
+          <div class="text-2xl mb-2">
+           📅
+          </div>
+          <div class="font-oswald font-bold text-sm">
+           Exam Schedule
+          </div>
+         </a>
+         <a class="bg-[#0e6ea8] rounded-sm p-4 text-white hover:bg-[#0c5a8a] transition-colors" href="https://icmab.gov.bd/notice/">
+          <div class="text-2xl mb-2">
+           📋
+          </div>
+          <div class="font-oswald font-bold text-sm">
+           Notice Board
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="w-full md:w-1/2 p-3 text-white">
+       <h3 class="font-oswald font-bold text-3xl mb-6 text-yellow-300">
+        Student Resources
+       </h3>
+       <div class="flex flex-col gap-3">
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/tab/2/">
+         <span class="text-xl">
+          📚
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           CMA Program Structure
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           Syllabus, Curriculum &amp; Study Plan
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/tab/3/">
+         <span class="text-xl">
+          💰
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           Fees &amp; Charges
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           Registration, Tuition &amp; Exam Fees
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/tab/4/">
+         <span class="text-xl">
+          🎖️
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           Financial Aid &amp; Scholarships
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           Merit-based and need-based support
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/digital-experience-centre/">
+         <span class="text-xl">
+          🖥️
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           E-Learning Platform
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           Online study materials &amp; recordings
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center justify-center gap-2 bg-yellow-400 text-[#021d6f] font-oswald font-bold py-3 rounded-sm hover:bg-yellow-300 transition-colors mt-2" href="https://erp.icmab.gov.bd/">
+         Apply / Register Now →
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Tab: Members -->
+    <div class="tab-panel hidden" id="tab-members">
+     <div class="flex flex-wrap -m-3">
+      <div class="w-full md:w-1/2 p-3">
+       <div class="flex flex-col gap-4">
+        <div class="relative h-[300px] img-zoom overflow-hidden rounded-sm">
+         <img alt="Member Services" class="w-full h-full object-cover" src="assets/anima/work.webp"/>
+         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-5">
+          <div>
+           <h5 class="text-white font-oswald font-bold text-xl mb-1">
+            Member Services
+           </h5>
+           <p class="text-white/70 text-sm">
+            Manage your membership, CPD and benefits
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+         <a class="bg-[#0c68e9] rounded-sm p-4 text-white hover:bg-[#0c44a8] transition-colors" href="https://icmab.gov.bd/cpd-events/">
+          <div class="text-2xl mb-2">
+           🎓
+          </div>
+          <div class="font-oswald font-bold text-sm">
+           CPD Events
+          </div>
+         </a>
+         <a class="bg-[#0e6ea8] rounded-sm p-4 text-white hover:bg-[#0c5a8a] transition-colors" href="https://icmab.gov.bd/members-directory/">
+          <div class="text-2xl mb-2">
+           📇
+          </div>
+          <div class="font-oswald font-bold text-sm">
+           Members Directory
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="w-full md:w-1/2 p-3 text-white">
+       <h3 class="font-oswald font-bold text-3xl mb-6 text-yellow-300">
+        Member Services
+       </h3>
+       <div class="flex flex-col gap-3">
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/membership/">
+         <span class="text-xl">
+          🏅
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           Membership Benefits
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           Full &amp; Associate FCMA Membership
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/desk-of-members-affair/">
+         <span class="text-xl">
+          🖊️
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           Desk of Member's Affair
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           Certificates, subscriptions, updates
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/cpd-events/">
+         <span class="text-xl">
+          📆
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           CPD &amp; Seminars
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           Upcoming professional development events
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center gap-3 bg-white/8 hover:bg-white/14 p-4 rounded-sm transition-colors" href="https://icmab.gov.bd/journal/">
+         <span class="text-xl">
+          📰
+         </span>
+         <div>
+          <div class="font-bold text-sm font-oswald">
+           Journal &amp; Publications
+          </div>
+          <div class="text-white/60 text-xs mt-0.5">
+           ICMAB Journal and research papers
+          </div>
+         </div>
+         <span class="ml-auto text-yellow-400">
+          →
+         </span>
+        </a>
+        <a class="flex items-center justify-center gap-2 bg-yellow-400 text-[#021d6f] font-oswald font-bold py-3 rounded-sm hover:bg-yellow-300 transition-colors mt-2" href="https://erp.icmab.gov.bd/erp_icmab/Users/Login.aspx">
+         🔐 Login to My ICMAB →
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ NEWS SECTION ════════════════════════════ -->
+  <section class="bg-white py-16">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <div class="flex items-end justify-between mb-8">
+     <h2 class="font-oswald font-bold text-[42px] md:text-5xl section-title grad-text reveal">
+      ICMAB News
+     </h2>
+     <a class="hidden md:inline-flex items-center gap-2 text-[#0c68e9] font-bold text-sm border border-[#0c68e9]/30 px-4 py-2 rounded-sm hover:bg-[#0c68e9]/5" href="https://icmab.gov.bd/news/">
+      All News →
+     </a>
+    </div>
+    <div class="flex flex-wrap -m-3">
+     <!-- Featured -->
+     <div class="w-full md:w-1/2 p-3 reveal-left">
+      <a class="block group" href="https://icmab.gov.bd/news/67/">
+       <div class="img-zoom overflow-hidden rounded-sm shadow-lg">
+        <img alt="SAFA Summit News" class="w-full h-[280px] md:h-[340px] object-cover" src="assets/anima/WhatsApp_Image_2026-05-13_at_6.40.30_PM.webp"/>
+       </div>
+       <div class="p-4 border border-t-0 border-gray-100 rounded-b-sm shadow-sm">
+        <span class="inline-block bg-[#0c68e9] text-white text-[10px] font-bold px-2 py-0.5 rounded mb-2 font-oswald tracking-wider">
+         INTERNATIONAL
+        </span>
+        <h5 class="font-bold text-gray-900 text-lg leading-snug group-hover:text-[#0c68e9] transition-colors">
+         ICMAB Representatives Attended the SAFA International Future
+                  of Finance Summit 2026 in Lahore, Pakistan as Panelists
+        </h5>
+        <p class="text-gray-500 text-sm mt-2 leading-relaxed line-clamp-3">
+         Mr. Md. Kausar Alam FCMA, President of ICMAB and senior
+                  council members attended the SAFA International Future of
+                  Finance Summit 2026 at Pearl Continental Hotel, Lahore,
+                  Pakistan.
+        </p>
+        <span class="text-[#0c68e9] text-xs font-bold mt-3 block">
+         May 13, 2026 →
+        </span>
+       </div>
+      </a>
+     </div>
+     <!-- Side news -->
+     <div class="w-full md:w-1/2 p-3 flex flex-col gap-4 reveal-right">
+      <a class="flex gap-4 group" href="https://icmab.gov.bd/news/71/">
+       <div class="img-zoom overflow-hidden rounded-sm shrink-0 w-[120px] h-[90px]">
+        <img alt="Corporate Governance Webinar" class="w-full h-full object-cover" src="assets/anima/gover-2.webp"/>
+       </div>
+       <div class="flex-1">
+        <span class="inline-block bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded mb-1 font-oswald">
+         WEBINAR
+        </span>
+        <h6 class="text-sm font-semibold text-gray-800 leading-snug group-hover:text-[#0c68e9] transition-colors">
+         ICMAB Organized Webinar on "Corporate Governance and Role
+                  of Independent Director"
+        </h6>
+        <span class="text-gray-400 text-xs mt-1 block">
+         May 22, 2026
+        </span>
+       </div>
+      </a>
+      <hr class="border-gray-100"/>
+      <a class="flex gap-4 group" href="https://icmab.gov.bd/news/69/">
+       <div class="img-zoom overflow-hidden rounded-sm shrink-0 w-[120px] h-[90px]">
+        <img alt="Toastmasters Anniversary" class="w-full h-full object-cover" src="assets/anima/IMG_0506.JPG.webp"/>
+       </div>
+       <div class="flex-1">
+        <span class="inline-block bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded mb-1 font-oswald">
+         EVENT
+        </span>
+        <h6 class="text-sm font-semibold text-gray-800 leading-snug group-hover:text-[#0c68e9] transition-colors">
+         CMA Bangladesh Tigers Toastmasters Club Celebrate 14th
+                  Anniversary
+        </h6>
+        <span class="text-gray-400 text-xs mt-1 block">
+         May 18, 2026
+        </span>
+       </div>
+      </a>
+      <hr class="border-gray-100"/>
+      <!-- Extra news items -->
+      <a class="flex gap-4 group" href="https://icmab.gov.bd/news/">
+       <div class="overflow-hidden rounded-sm shrink-0 w-[120px] h-[90px] bg-gray-100 flex items-center justify-center">
+        <img alt="ICMAB News" class="w-16 object-contain opacity-40" src="assets/anima/logo-transparent.png"/>
+       </div>
+       <div class="flex-1">
+        <span class="inline-block bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded mb-1 font-oswald">
+         CIRCULAR
+        </span>
+        <h6 class="text-sm font-semibold text-gray-800 leading-snug group-hover:text-[#0c68e9] transition-colors">
+         New Curriculum Structure for CMA Program — Effective 2026
+                  Session
+        </h6>
+        <span class="text-gray-400 text-xs mt-1 block">
+         May 10, 2026
+        </span>
+       </div>
+      </a>
+      <a class="inline-flex items-center gap-2 text-[#0c68e9] font-bold text-sm mt-auto hover:underline" href="https://icmab.gov.bd/news/">
+       View All News →
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ VIDEO + BLUE PANEL ═════════════════════ -->
+  <div class="relative overflow-hidden" style="height:600px;">
+   <!-- ICMAB promo video (YouTube embed from wellcome-book-promo-videos API) -->
+   <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" id="promo-video" src="https://www.youtube.com/embed/NoAEki7UCXM?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=NoAEki7UCXM&amp;controls=0&amp;rel=0&amp;enablejsapi=1&amp;modestbranding=1" title="ICMAB Promo Video"></iframe>
+   <!-- Video controls top-right -->
+   <div class="absolute top-4 right-4 z-20 flex gap-2">
+    <button aria-label="Play/Pause" class="w-10 h-10 bg-black/60 hover:bg-black/80 text-white flex items-center justify-center rounded-sm" id="play-btn2" onclick="toggleV2Play()">
+     <svg class="w-5 h-5" fill="white" id="play-svg" viewbox="0 0 24 24">
+      <path d="M6 4h4v16H6zm8 0h4v16h-4z">
+      </path>
+     </svg>
+     <svg class="w-5 h-5" fill="white" id="paused-svg" viewbox="0 0 24 24">
+      <path d="M8 5v14l11-7z">
+      </path>
+     </svg>
+    </button>
+    <button aria-label="Mute/Unmute" class="w-10 h-10 bg-black/60 hover:bg-black/80 text-white flex items-center justify-center rounded-sm" id="mute-btn2" onclick="toggleV2Mute()">
+     <svg class="w-5 h-5" fill="white" id="unmuted-svg" viewbox="0 0 24 24">
+      <path d="M3 9v6h4l5 5V4L7 9H3zm16.07.07c-1.15-1.15-2.7-1.89-4.43-1.9v2c1.21.01 2.3.49 3.09 1.28l1.34-1.38zm2.31-2.31C19.07 4.46 16.72 3 14 3v2c2.17 0 4.13.88 5.55 2.31l1.83-1.55z">
+      </path>
+     </svg>
+     <svg class="w-5 h-5" fill="white" id="muted-svg" viewbox="0 0 24 24">
+      <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V9.8l2.45 2.45c.03-.26.05-.52.05-.26zM3 9v6h4l5 5V4L7 9H3zm13.5 3c0-.94-.2-1.82-.54-2.64l-1.51 1.51C14.47 11.22 14.5 11.6 14.5 12c0 .96-.29 1.86-.78 2.62l1.46 1.46A7.13 7.13 0 0 0 16.5 12z">
+      </path>
+     </svg>
+    </button>
+   </div>
+   <!-- Blue text panel left -->
+   <div class="absolute top-0 left-0 w-full md:w-[45%] h-full bg-[#0c68e9]/88 z-10 flex flex-col justify-center px-8 md:px-12">
+    <div class="reveal-left">
+     <h3 class="font-oswald font-bold text-white text-[28px] md:text-[38px] leading-tight mb-6">
+      From
+      <span class="inline-flex items-center bg-white px-3 mx-1 rounded-sm">
+       <span class="grad-text font-bold">
+        Bangladesh
+       </span>
+      </span>
+      to the World: Accounting Excellence
+     </h3>
+    </div>
+    <div class="reveal-left">
+     <p class="text-white/85 text-base leading-relaxed mb-8">
+      The only national authority providing globally recognized CMA
+            certification and professional training. Unlock new opportunities
+            and make a difference with ICMAB.
+     </p>
+    </div>
+    <div class="reveal-left">
+     <a class="inline-flex items-center gap-2 bg-white text-[#0c68e9] font-oswald font-bold text-sm px-5 py-3 rounded-sm hover:bg-gray-50 transition-colors" href="https://icmab.gov.bd/tab/2/">
+      Explore CMA Courses →
+     </a>
+    </div>
+   </div>
+  </div>
+  <!-- ══════════════════════════════ WHO WE ARE ══════════════════════════════ -->
+  <section class="bg-gray-50 py-16">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <div class="text-center mb-10 reveal">
+     <span class="text-[#0c68e9] font-oswald font-semibold text-sm tracking-[3px] uppercase mb-2 block">
+      Institute of Cost and Management Accountants of Bangladesh
+     </span>
+     <h2 class="font-oswald font-bold text-[42px] md:text-5xl section-title center grad-text inline-block">
+      Who we are
+     </h2>
+    </div>
+    <div class="bg-white rounded-sm shadow-xl overflow-hidden">
+     <div class="flex flex-wrap">
+      <!-- Text side -->
+      <div class="w-full md:w-1/2 p-8 md:p-12" style="background-image:radial-gradient(circle,#d1d5db 1px,transparent 1px);background-size:18px 18px;">
+       <div class="reveal-left">
+        <h3 class="font-bold text-[32px] mb-1 leading-tight">
+         <span class="relative inline-block">
+          About
+          <span class="absolute left-0 -bottom-2 w-14 h-1 bg-[#0c68e9] rounded-sm"></span>
+         </span>
+         <span class="icmab-highlight text-[#021d6f] ml-2">ICMAB</span>
+        </h3>
+        <div class="mb-6 mt-5"></div>
+       </div>
+       <div class="flex gap-1 mb-6 reveal-left" id="about-tabs">
+        <button class="about-tab active" data-about="history" onclick="switchAboutTab('history')">History</button>
+        <button class="about-tab" data-about="vision" onclick="switchAboutTab('vision')">Vision</button>
+        <button class="about-tab" data-about="mission" onclick="switchAboutTab('mission')">Mission</button>
+       </div>
+       <div class="reveal-left min-h-[200px]">
+        <div class="about-tab-panel active" id="about-history">
+         <p class="text-base leading-relaxed text-justify text-gray-700">
+          The Institute of Cost and Management Accountants of Bangladesh (ICMAB) is the national body of professional Cost and Management Accountants established with the prime objective of promoting and regulating the CMA profession. ICMAB is a statutory body under the Ministry of Commerce, set up in 1958.
+         </p>
+        </div>
+        <div class="about-tab-panel" id="about-vision">
+         <p class="text-base leading-relaxed text-justify text-gray-700">
+          To be the leading professional body in Bangladesh for Cost and Management Accounting, recognized globally for excellence in education, research, and professional practice — empowering members to drive sustainable economic growth.
+         </p>
+        </div>
+        <div class="about-tab-panel" id="about-mission">
+         <p class="text-base leading-relaxed text-justify text-gray-700">
+          To develop competent Cost and Management Accountants through quality education and training, uphold professional ethics and standards, and contribute to national development by providing expert financial and management advisory services.
+         </p>
+        </div>
+       </div>
+       <div class="mt-6 reveal-left">
+        <a class="inline-flex items-center gap-2 bg-[#0c68e9] text-white text-sm font-bold px-5 py-2.5 rounded-sm hover:bg-[#0c44a8] transition-colors font-oswald" href="https://icmab.gov.bd/management/">
+         Read More &gt;
+        </a>
+       </div>
+      </div>
+      <!-- Map side -->
+      <div class="w-full md:w-1/2 flex flex-col bg-[#f0f6ff]">
+       <div class="border-b border-gray-100 flex justify-center items-center py-4 px-3">
+        <h5 class="font-bold text-lg">
+         Nationwide Presence
+        </h5>
+       </div>
+       <div class="flex-1 relative min-h-[420px] overflow-hidden reveal-right" id="bd-map-section">
+        <div class="bd-map-wrap">
+         <svg aria-label="Bangladesh map showing ICMAB nationwide presence" id="bd-map-svg" preserveAspectRatio="xMidYMid meet" role="img" viewBox="0 0 800 600"></svg>
+        </div>
+        <div id="map-tooltip"></div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ STUDY ONLINE ═══════════════════════════ -->
+  <section class="flex flex-wrap">
+   <div class="w-full md:w-5/12 bg-[#0c68e9] text-white flex flex-col justify-center px-8 md:px-16 py-16">
+    <div class="reveal-left">
+     <span class="text-yellow-300 font-oswald font-semibold text-xs tracking-[3px] uppercase mb-3 block">
+      Digital Learning
+     </span>
+     <h3 class="font-oswald font-bold text-[28px] md:text-[36px] leading-tight mb-5">
+      Study Smarter, Study Online
+     </h3>
+     <p class="text-white/80 text-base leading-relaxed mb-8">
+      Flexible, engaging, and professional learning powered by ICMAB's
+            Digital Learning Experience Center.
+     </p>
+     <a class="inline-flex items-center gap-2 bg-white text-[#021d6f] font-oswald font-bold text-sm px-5 py-3 rounded-sm hover:bg-gray-50 transition-colors" href="https://icmab.gov.bd/digital-experience-centre/">
+      🌐 Virtual Digital Experience Zone
+     </a>
+    </div>
+   </div>
+   <div class="w-full md:w-7/12">
+    <div class="flex flex-wrap h-full">
+     <div class="w-full md:w-5/12 relative min-h-[360px] img-zoom overflow-hidden">
+      <img alt="" class="absolute inset-0 w-full h-full object-cover" src="assets/anima/home-summary.webp"/>
+      <span class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-sm z-10">
+       Featured
+      </span>
+     </div>
+     <div class="w-full md:w-7/12 bg-[#021d6f] text-white p-7 flex flex-col justify-center">
+      <div class="flex items-start justify-between mb-3">
+       <h4 class="font-oswald font-bold text-2xl">
+        Global Open Courses (GOC)
+       </h4>
+       <img alt="" class="w-10 h-10 opacity-70" src="assets/anima/icon-20.svg"/>
+      </div>
+      <h6 class="font-semibold text-sm mb-2">
+       Empower Your Future with World-Class Learning
+      </h6>
+      <p class="text-white/65 text-sm leading-relaxed mb-5">
+       Explore a diverse range of high-quality courses across multiple
+              disciplines, designed to build practical skills and advance your
+              career.
+      </p>
+      <div class="flex flex-col gap-2 mb-6 text-xs text-white/70">
+       <div class="flex items-center gap-2">
+        ✅ Offered by ICMAB
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ Fully Online &amp; Accessible Anytime
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ Free &amp; Open Learning for All
+       </div>
+       <div class="flex items-center gap-2">
+        ✅ 10+ Courses Across Multiple Fields
+       </div>
+      </div>
+      <a class="inline-flex items-center gap-2 bg-yellow-400 text-[#021d6f] font-oswald font-bold text-sm px-4 py-2.5 rounded-sm w-fit hover:bg-yellow-300 transition-colors" href="https://icmab.gov.bd/digital-experience-centre/">
+       Start Now →
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ SUCCESS STORIES ════════════════════════ -->
+  <section class="bg-neutral-700 py-0">
+   <div class="flex flex-col md:flex-row" style="min-height:580px;">
+    <!-- Photo strip -->
+    <div class="md:w-[28%] relative overflow-hidden bg-neutral-800">
+     <div class="absolute inset-0 flex md:flex-col items-center justify-around p-6 z-10 overflow-x-auto">
+      <button class="story-thumb relative group shrink-0 m-2" id="story-thumb-0" onclick="gotoStory(0)">
+       <img alt="Md. Abdur Rahman Khan FCMA" class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover border-4 border-white/20 group-hover:border-yellow-400 transition-all" src="assets/anima/230116042713.jpg"/>
+       <div class="absolute inset-0 rounded-full ring-4 ring-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity">
+       </div>
+      </button>
+      <button class="story-thumb relative group shrink-0 m-2" id="story-thumb-1" onclick="gotoStory(1)">
+       <img alt="Mamunur Rashid FCMA" class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover border-4 border-white/20 group-hover:border-yellow-400 transition-all" src="assets/anima/mamun__sir.jpg"/>
+      </button>
+      <button class="story-thumb relative group shrink-0 m-2" id="story-thumb-2" onclick="gotoStory(2)">
+       <img alt="Niranjan Chandra Debnath FCMA" class="w-20 h-20 md:w-28 md:h-28 rounded-full object-cover border-4 border-white/20 group-hover:border-yellow-400 transition-all" src="assets/anima/niranjan-chandra-debnath.jpg"/>
+      </button>
+     </div>
+    </div>
+    <!-- Main story image -->
+    <div class="md:w-[28%] relative overflow-hidden">
+     <div class="w-full h-full overflow-hidden" style="min-height:360px;">
+      <div class="flex h-full" id="story-inner" style="width:300%;min-height:360px;">
+       <div class="w-1/3 shrink-0 h-full">
+        <img alt="" class="w-full h-full object-cover" src="assets/anima/230116042713.jpg" style="min-height:360px;"/>
+       </div>
+       <div class="w-1/3 shrink-0 h-full">
+        <img alt="" class="w-full h-full object-cover" src="assets/anima/251222073018.jpg" style="min-height:360px;"/>
+       </div>
+       <div class="w-1/3 shrink-0 h-full">
+        <img alt="" class="w-full h-full object-cover" src="assets/anima/niranjan-chandra-debnath.jpg" style="min-height:360px;"/>
+       </div>
+      </div>
+     </div>
+     <!-- Prev/Next -->
+     <button class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-[#0c68e9] text-white w-9 h-9 flex items-center justify-center rounded-full hover:bg-[#0c44a8]" onclick="prevStory()">
+      ‹
+     </button>
+     <button class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-[#0c68e9] text-white w-9 h-9 flex items-center justify-center rounded-full hover:bg-[#0c44a8]" onclick="nextStory()">
+      ›
+     </button>
+    </div>
+    <!-- Story text -->
+    <div class="md:w-[44%] bg-neutral-700 flex flex-col justify-center p-8 md:p-14">
+     <p class="font-oswald font-bold text-white text-2xl md:text-3xl leading-snug mb-4">
+      ICMAB Members and Students: A Legacy of Excellence
+     </p>
+     <hr class="border-white/15 mb-5"/>
+     <div id="story-text">
+      <span class="bg-yellow-400 text-[#021d6f] text-xs font-bold px-3 py-1 rounded font-oswald uppercase tracking-wider mb-3 inline-block">
+       Success Story
+      </span>
+      <h5 class="text-yellow-300 font-bold text-lg font-oswald mt-2">
+       Md. Abdur Rahman Khan FCMA
+      </h5>
+      <p class="text-white/75 text-sm mt-2 leading-relaxed">
+       A distinguished CMA who rose to a key leadership position, driving
+              national fiscal policy and exemplifying the excellence that ICMAB
+              professionals bring to their organizations.
+      </p>
+      <a class="inline-flex items-center gap-1 text-yellow-400 text-sm font-bold mt-4 hover:underline" href="https://icmab.gov.bd/success-story/">
+       Read Full Story →
+      </a>
+     </div>
+     <!-- Dots -->
+     <div class="flex gap-2 mt-6" id="story-dots">
+      <div class="w-6 h-1.5 bg-yellow-400 rounded-full transition-all story-dot">
+      </div>
+      <div class="w-2 h-1.5 bg-white/30 rounded-full transition-all story-dot">
+      </div>
+      <div class="w-2 h-1.5 bg-white/30 rounded-full transition-all story-dot">
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ NOTICE BOARD ═══════════════════════════ -->
+  <section class="bg-white py-14">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <div class="flex flex-wrap -m-4">
+     <!-- Notice board -->
+     <div class="w-full md:w-1/2 p-4 reveal-left">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="font-oswald font-bold text-2xl section-title grad-text">
+        Notice Board
+       </h3>
+       <a class="text-[#0c68e9] font-bold text-xs hover:underline" href="https://icmab.gov.bd/notice/">
+        View All →
+       </a>
+      </div>
+      <div class="border border-gray-100 rounded-sm overflow-hidden shadow-sm" style="height:320px;">
+       <div class="notice-scroll">
+        <!-- Notices set 1 -->
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-[#0c68e9]/10 rounded flex items-center justify-center text-[#0c68e9] text-sm">
+          📋
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           CMA Examination — July 2026 Session Registration Open
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 28, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-red-50 rounded flex items-center justify-center text-red-500 text-sm">
+          🔔
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           Admission Open: July–December 2026 Session
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 24, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-green-50 rounded flex items-center justify-center text-green-600 text-sm">
+          ✅
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           Amendment to CMA Bye-Laws 2026 — Official Gazette
+                      Published
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 20, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-yellow-50 rounded flex items-center justify-center text-yellow-600 text-sm">
+          📅
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           CPD Seminar: Financial Reporting Standards, June 15, 2026
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 15, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-[#0c68e9]/10 rounded flex items-center justify-center text-[#0c68e9] text-sm">
+          📢
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           New Curriculum Structure for CMA Program — Effective July
+                      2026
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 10, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <!-- Notices set 2 (duplicate for seamless scroll) -->
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-[#0c68e9]/10 rounded flex items-center justify-center text-[#0c68e9] text-sm">
+          📋
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           CMA Examination — July 2026 Session Registration Open
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 28, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-red-50 rounded flex items-center justify-center text-red-500 text-sm">
+          🔔
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           Admission Open: July–December 2026 Session
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 24, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-green-50 rounded flex items-center justify-center text-green-600 text-sm">
+          ✅
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           Amendment to CMA Bye-Laws 2026 — Official Gazette
+                      Published
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 20, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+        <a class="flex items-start gap-3 p-4 border-b border-gray-100 hover:bg-gray-50 transition-colors block" href="https://icmab.gov.bd/notice/">
+         <span class="shrink-0 w-8 h-8 bg-yellow-50 rounded flex items-center justify-center text-yellow-600 text-sm">
+          📅
+         </span>
+         <div class="flex-1">
+          <p class="text-sm font-semibold text-gray-800 leading-snug">
+           CPD Seminar: Financial Reporting Standards, June 15, 2026
+          </p>
+          <span class="text-xs text-gray-400 mt-0.5 block">
+           May 15, 2026
+          </span>
+         </div>
+         <span class="text-[#0c68e9] text-xs shrink-0">
+          →
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+     <!-- Events -->
+     <div class="w-full md:w-1/2 p-4 reveal-right">
+      <div class="flex items-center justify-between mb-4">
+       <h3 class="font-oswald font-bold text-2xl section-title grad-text">
+        Upcoming Events
+       </h3>
+       <a class="text-[#0c68e9] font-bold text-xs hover:underline" href="https://icmab.gov.bd/cpd-events/">
+        View All →
+       </a>
+      </div>
+      <div class="flex flex-col gap-3">
+       <div class="flex gap-4 p-4 border border-gray-100 rounded-sm hover:shadow-md transition-shadow bg-white">
+        <div class="shrink-0 w-14 h-14 bg-[#0c68e9] rounded flex flex-col items-center justify-center text-white">
+         <span class="font-oswald font-bold text-xl leading-none">
+          15
+         </span>
+         <span class="text-[9px] uppercase tracking-wider mt-0.5">
+          Jun
+         </span>
+        </div>
+        <div class="flex-1">
+         <span class="bg-[#0c68e9]/10 text-[#0c68e9] text-[10px] font-bold px-2 py-0.5 rounded font-oswald">
+          CPD SEMINAR
+         </span>
+         <h6 class="font-bold text-sm mt-1">
+          Financial Reporting Standards Update 2026
+         </h6>
+         <p class="text-gray-400 text-xs mt-0.5">
+          📍 ICMAB Bhaban, Dhaka    🕙 10:00 AM
+         </p>
+        </div>
+       </div>
+       <div class="flex gap-4 p-4 border border-gray-100 rounded-sm hover:shadow-md transition-shadow bg-white">
+        <div class="shrink-0 w-14 h-14 bg-[#021d6f] rounded flex flex-col items-center justify-center text-white">
+         <span class="font-oswald font-bold text-xl leading-none">
+          22
+         </span>
+         <span class="text-[9px] uppercase tracking-wider mt-0.5">
+          Jun
+         </span>
+        </div>
+        <div class="flex-1">
+         <span class="bg-[#021d6f]/10 text-[#021d6f] text-[10px] font-bold px-2 py-0.5 rounded font-oswald">
+          WEBINAR
+         </span>
+         <h6 class="font-bold text-sm mt-1">
+          Corporate Governance &amp; Independent Directors
+         </h6>
+         <p class="text-gray-400 text-xs mt-0.5">
+          💻 Online (Zoom)    🕒 3:00 PM
+         </p>
+        </div>
+       </div>
+       <div class="flex gap-4 p-4 border border-gray-100 rounded-sm hover:shadow-md transition-shadow bg-white">
+        <div class="shrink-0 w-14 h-14 bg-yellow-400 rounded flex flex-col items-center justify-center">
+         <span class="font-oswald font-bold text-xl leading-none text-[#021d6f]">
+          05
+         </span>
+         <span class="text-[9px] uppercase tracking-wider mt-0.5 text-[#021d6f]">
+          Jul
+         </span>
+        </div>
+        <div class="flex-1">
+         <span class="bg-yellow-100 text-yellow-700 text-[10px] font-bold px-2 py-0.5 rounded font-oswald">
+          EXAM
+         </span>
+         <h6 class="font-bold text-sm mt-1">
+          CMA Examination — July 2026 Session Begins
+         </h6>
+         <p class="text-gray-400 text-xs mt-0.5">
+          📍 All Study Centers Nationwide
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ CAMPUSES ═══════════════════════════════ -->
+  <section class="py-14 bg-gray-50">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <div class="flex flex-wrap items-end justify-between mb-8 reveal">
+     <div>
+      <h2 class="font-oswald font-bold text-[36px] md:text-5xl section-title grad-text">
+       Our Campuses
+      </h2>
+      <p class="mt-5 text-gray-600 text-base leading-relaxed max-w-[520px]">
+       Headquarters in Dhaka, three branch offices, five study centers,
+              and five overseas chapters nationwide.
+      </p>
+     </div>
+     <a class="inline-block font-bold text-[#0c68e9] pb-1 border-b-2 border-[#0c68e9] hover:border-[#021d6f] hover:text-[#021d6f] transition-colors text-sm mt-4 md:mt-0" href="https://icmab.gov.bd/campus-life/">
+      Explore All Campuses →
+     </a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+     <div class="reveal-scale">
+      <div class="img-zoom overflow-hidden rounded-sm shadow">
+       <img alt="Dhaka HQ" class="w-full h-[200px] object-cover" src="assets/anima/ICMAB.webp"/>
+      </div>
+      <span class="text-[#0c68e9] text-sm font-bold mt-2.5 block font-oswald">
+       🏛️ Dhaka HQ — Main Branch
+      </span>
+     </div>
+     <div class="reveal-scale">
+      <div class="img-zoom overflow-hidden rounded-sm shadow">
+       <img alt="Regional Branches" class="w-full h-[200px] object-cover" src="assets/anima/Ctg.webp"/>
+      </div>
+      <span class="text-[#0c68e9] text-sm font-bold mt-2.5 block font-oswald">
+       🗺️ Regional Branches
+      </span>
+     </div>
+     <div class="reveal-scale">
+      <div class="img-zoom overflow-hidden rounded-sm shadow">
+       <img alt="Study Centers" class="w-full h-[200px] object-cover" src="assets/anima/Study_Centers.webp"/>
+      </div>
+      <span class="text-[#0c68e9] text-sm font-bold mt-2.5 block font-oswald">
+       📚 Study Centers
+      </span>
+     </div>
+     <div class="reveal-scale">
+      <div class="img-zoom overflow-hidden rounded-sm shadow">
+       <img alt="Overseas Chapters" class="w-full h-[200px] object-cover" src="assets/anima/notice.jpg"/>
+      </div>
+      <span class="text-[#0c68e9] text-sm font-bold mt-2.5 block font-oswald">
+       🌍 Overseas Chapters
+      </span>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ SOCIAL IMPACT ══════════════════════════ -->
+  <section class="py-14 bg-white overflow-hidden">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <div class="text-center mb-10 reveal">
+     <h2 class="font-oswald font-bold text-[36px] md:text-5xl section-title center grad-text inline-block">
+      Socio-Economic Development Contributions
+     </h2>
+    </div>
+    <div class="flex flex-wrap -m-3">
+     <div class="w-full md:w-1/2 p-3">
+      <div class="grid grid-cols-2 gap-3">
+       <a class="block relative h-[260px] img-zoom overflow-hidden rounded-sm shadow" href="https://icmab.gov.bd/social-impact/4/" style="background:url('assets/icmab-web/futuristic-technology-hologram-min.jpg') center/cover;">
+        <div class="absolute inset-0 bg-black/40 hover:bg-black/25 transition-colors">
+        </div>
+        <div class="absolute left-3 bottom-3 right-3">
+         <span class="text-white font-bold font-oswald block text-sm">
+          Digital Transformation
+         </span>
+         <p class="text-white/75 text-xs mt-0.5">
+          Inaugurated Digital Classrooms
+         </p>
+        </div>
+       </a>
+       <a class="block relative h-[260px] img-zoom overflow-hidden rounded-sm shadow" href="https://icmab.gov.bd/social-impact/3/" style="background:url('assets/icmab-web/sustainable-travel-concept-min.jpg') center/cover;">
+        <div class="absolute inset-0 bg-black/40 hover:bg-black/25 transition-colors">
+        </div>
+        <div class="absolute left-3 bottom-3 right-3">
+         <span class="text-white font-bold font-oswald block text-sm">
+          Sustainability
+         </span>
+         <p class="text-white/75 text-xs mt-0.5">
+          Promoting Green Accounting
+         </p>
+        </div>
+       </a>
+       <a class="block relative h-[260px] img-zoom overflow-hidden rounded-sm shadow" href="https://icmab.gov.bd/social-impact/2/" style="background:url('assets/icmab-web/close-up-five-rows-coins-min.jpg') center/cover;">
+        <div class="absolute inset-0 bg-black/40 hover:bg-black/25 transition-colors">
+        </div>
+        <div class="absolute left-3 bottom-3 right-3">
+         <span class="text-white font-bold font-oswald block text-sm">
+          Future Economy
+         </span>
+         <p class="text-white/75 text-xs mt-0.5">
+          Nurturing Financial Leaders
+         </p>
+        </div>
+       </a>
+       <a class="block relative h-[260px] img-zoom overflow-hidden rounded-sm shadow" href="https://icmab.gov.bd/social-impact/1/" style="background:url('assets/icmab-web/Capture_hRTZufC.webp') center/cover;">
+        <div class="absolute inset-0 bg-black/40 hover:bg-black/25 transition-colors">
+        </div>
+        <div class="absolute left-3 bottom-3 right-3">
+         <span class="text-white font-bold font-oswald block text-sm">
+          Women's Empowerment
+         </span>
+         <p class="text-white/75 text-xs mt-0.5">
+          ICMAB's Role in Stronger Future
+         </p>
+        </div>
+       </a>
+      </div>
+     </div>
+     <div class="w-full md:w-1/2 p-3 reveal-right">
+      <div class="relative h-[540px] img-zoom overflow-hidden rounded-sm" style="background:url('assets/icmab-web/1458.jpg') center/cover;">
+       <div class="absolute inset-0 bg-gradient-to-t from-[#020d3b]/90 via-[#020d3b]/20 to-transparent flex flex-col justify-end p-8">
+        <span class="bg-yellow-400 text-[#021d6f] text-xs font-bold px-3 py-1 rounded font-oswald uppercase tracking-wider mb-3 inline-block w-fit">
+         President's Desk
+        </span>
+        <h3 class="text-white text-[28px] font-bold font-oswald leading-tight mb-1">
+         Mr. Md. Kausar Alam FCMA
+        </h3>
+        <p class="text-white/70 font-bold tracking-[2px] uppercase text-xs mb-6">
+         ICMAB President, 2025–2026
+        </p>
+        <a class="inline-flex items-center gap-2 bg-[#0c68e9] text-white text-sm font-bold px-4 py-2.5 rounded-sm w-fit hover:bg-[#0c44a8] transition-colors" href="https://icmab.gov.bd/presidents-desk/">
+         Read President's Message →
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ ANALYTICS GRID ═════════════════════════ -->
+  <section class="grid grid-cols-1 md:grid-cols-3 overflow-hidden">
+   <!-- Stat 1 -->
+   <div class="bg-[#020d3b] text-white flex flex-col items-center justify-center text-center py-20 px-8">
+    <div class="reveal">
+     <h1 class="font-oswald font-black text-[72px] leading-none text-yellow-400">
+      #1
+     </h1>
+     <p class="font-oswald text-lg font-semibold text-white/80 mt-3 max-w-[220px]">
+      Sole National Authority for CMA Profession in Bangladesh
+     </p>
+    </div>
+   </div>
+   <!-- Image 1 -->
+   <div class="relative overflow-hidden" style="min-height:420px;">
+    <img alt="" class="absolute inset-0 w-full h-full object-cover brightness-90" src="assets/anima/Bandarban.webp"/>
+   </div>
+   <!-- Image 2 full height -->
+   <div class="relative overflow-hidden md:row-span-2" style="min-height:420px;">
+    <img alt="" class="absolute inset-0 w-full h-full object-cover brightness-90" src="assets/anima/nature.webp"/>
+   </div>
+   <!-- Image 3 -->
+   <div class="relative overflow-hidden" style="min-height:420px;">
+    <img alt="" class="absolute inset-0 w-full h-full object-cover brightness-90" src="assets/anima/winter.webp"/>
+   </div>
+   <!-- Stat 2 -->
+   <div class="bg-white flex flex-col items-center justify-center text-center py-20 px-8">
+    <div class="reveal">
+     <h1 class="font-oswald font-black text-[72px] leading-none text-[#0c68e9]">
+      2000+
+     </h1>
+     <p class="font-oswald font-bold text-xs tracking-[3px] uppercase text-gray-400 mt-1 mb-2">
+      Members
+     </p>
+     <p class="font-oswald text-lg font-semibold text-gray-700 max-w-[220px]">
+      Globally Recognized CMA Professionals
+     </p>
+    </div>
+   </div>
+   <!-- Image 4 -->
+   <div class="relative overflow-hidden" style="min-height:420px;">
+    <img alt="" class="absolute inset-0 w-full h-full object-cover brightness-90" src="assets/icmab/video2.avif"/>
+   </div>
+   <!-- Stat 3 -->
+   <div class="flex flex-col items-center justify-center text-center py-20 px-8" style="background:linear-gradient(135deg,#0c68e9,#020d3b);">
+    <div class="reveal">
+     <h1 class="font-oswald font-black text-[72px] leading-none text-yellow-400">
+      30K+
+     </h1>
+     <p class="font-oswald font-bold text-xs tracking-[3px] uppercase text-white/60 mt-1 mb-2">
+      Students
+     </p>
+     <p class="font-oswald text-lg font-semibold text-white max-w-[220px]">
+      Tomorrow's CMA Leaders in the Making
+     </p>
+    </div>
+   </div>
+   <!-- Image 5 -->
+   <div class="relative overflow-hidden" style="min-height:420px;">
+    <img alt="" class="absolute inset-0 w-full h-full object-cover brightness-90" src="assets/anima/hero.webp"/>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ QUICK STATS ════════════════════════════ -->
+  <section class="py-14 bg-white">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+     <div class="reveal-scale relative overflow-hidden rounded-2xl h-[240px] flex flex-col items-center justify-end p-6" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);">
+      <img alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" src="assets/anima/15.jpg"/>
+      <div class="relative z-10 text-center">
+       <h4 class="text-[#dc2626] text-lg font-bold font-oswald">
+        Total Fees
+       </h4>
+       <h5 class="font-oswald font-bold text-xl">
+        ≈ BDT 1.2 Lacs
+       </h5>
+       <span class="text-gray-500 text-xs font-semibold">
+        Tuition + Exam
+       </span>
+      </div>
+     </div>
+     <div class="reveal-scale relative overflow-hidden rounded-2xl h-[240px] flex flex-col items-center justify-end p-6" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);">
+      <img alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" src="assets/anima/hero.webp"/>
+      <div class="relative z-10 text-center">
+       <h4 class="text-[#dc2626] text-lg font-bold font-oswald">
+        Study Mode
+       </h4>
+       <h5 class="font-oswald font-bold text-xl">
+        Hybrid Mode
+       </h5>
+       <span class="text-gray-500 text-xs font-semibold">
+        Delivery
+       </span>
+      </div>
+     </div>
+     <div class="reveal-scale relative overflow-hidden rounded-2xl h-[240px] flex flex-col items-center justify-end p-6" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);">
+      <img alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" src="assets/anima/14.jpg"/>
+      <div class="relative z-10 text-center">
+       <h4 class="text-[#dc2626] text-lg font-bold font-oswald">
+        Admission Sessions
+       </h4>
+       <h5 class="font-oswald font-bold text-xl">
+        Jan–Jun &amp; Jul–Dec
+       </h5>
+       <span class="text-gray-500 text-xs font-semibold">
+        Intakes
+       </span>
+      </div>
+     </div>
+     <div class="reveal-scale relative overflow-hidden rounded-2xl h-[240px] flex flex-col items-center justify-end p-6" style="background:linear-gradient(135deg,#fff7ed,#ffedd5);">
+      <img alt="" class="absolute inset-0 w-full h-full object-cover opacity-20" src="assets/anima/13.avif"/>
+      <div class="relative z-10 text-center">
+       <h4 class="text-[#dc2626] text-lg font-bold font-oswald">
+        Course Duration
+       </h4>
+       <h5 class="font-oswald font-bold text-xl">
+        2.5 Years
+       </h5>
+       <span class="text-gray-500 text-xs font-semibold">
+        Duration
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ FOR EMPLOYERS ══════════════════════════ -->
+  <section class="py-14 bg-gray-50">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <h2 class="font-oswald font-bold text-[36px] md:text-5xl section-title grad-text mb-10 reveal">
+     For Employers
+    </h2>
+    <div class="flex flex-wrap -m-4">
+     <div class="w-full md:w-1/3 p-4 reveal-left">
+      <div class="img-zoom overflow-hidden rounded-sm h-[320px] shadow">
+       <img alt="Employers" class="w-full h-full object-cover" src="assets/anima/work.webp"/>
+      </div>
+     </div>
+     <div class="w-full md:w-2/3 p-4 flex flex-col justify-center reveal-right">
+      <h4 class="text-[#0c68e9] font-oswald font-bold text-2xl mb-3">
+       Connect with Elite CMA Talent from ICMAB
+      </h4>
+      <p class="text-gray-600 text-sm leading-relaxed mb-6">
+       Empower your organization with highly skilled Cost and Management
+              Accounting professionals from ICMAB. Connect with fully qualified
+              CMA members and part-qualified students actively progressing
+              toward professional excellence. ICMAB professionals are trained to
+              excel in cost management, financial analysis, compliance, and
+              business strategy.
+      </p>
+      <div class="flex flex-wrap -m-3">
+       <div class="w-full md:w-1/3 p-3">
+        <div class="img-zoom overflow-hidden rounded-sm h-[180px]">
+         <img alt="" class="w-full h-full object-cover" src="assets/anima/work2.webp"/>
+        </div>
+       </div>
+       <div class="w-full md:w-2/3 p-3 flex flex-col gap-2 justify-center">
+        <a class="hover-fill flex items-center gap-2 text-[#0c68e9] text-sm font-bold px-4 py-2 border-l-[6px] border-yellow-400 bg-white/50 hover:bg-yellow-50 rounded-r-sm transition-colors" href="#">
+         <span>
+          Explore Our CV Bank
+         </span>
+         <span>
+          →
+         </span>
+        </a>
+        <a class="hover-fill flex items-center gap-2 text-[#0c68e9] text-sm font-bold px-4 py-2 border-l-[6px] border-yellow-400 bg-white/50 hover:bg-yellow-50 rounded-r-sm transition-colors" href="#">
+         <span>
+          Request Candidate Profiles on Demand
+         </span>
+         <span>
+          →
+         </span>
+        </a>
+        <a class="hover-fill flex items-center gap-2 text-[#0c68e9] text-sm font-bold px-4 py-2 border-l-[6px] border-yellow-400 bg-white/50 hover:bg-yellow-50 rounded-r-sm transition-colors" href="https://icmab.gov.bd/Contact-Us-2026/">
+         <span>
+          Contact Employer Support
+         </span>
+         <span>
+          →
+         </span>
+        </a>
+        <a class="hover-fill flex items-center gap-2 text-[#0c68e9] text-sm font-bold px-4 py-2 border-l-[6px] border-yellow-400 bg-white/50 hover:bg-yellow-50 rounded-r-sm transition-colors" href="#">
+         <span>
+          Join HR Conferences — Submit EOI
+         </span>
+         <span>
+          →
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ CAREER OPPS ════════════════════════════ -->
+  <section class="bg-[#021d6f] py-14 relative overflow-hidden">
+   <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 30% 50%, #0c68e9 0%, transparent 60%), radial-gradient(circle at 70% 50%, #0c44a8 0%, transparent 60%);">
+   </div>
+   <div class="relative max-w-[1100px] mx-auto px-6">
+    <div class="text-center mb-10 reveal">
+     <h2 class="font-oswald font-bold text-[36px] md:text-5xl section-title center grad-text-white inline-block">
+      Career Opportunities for CMAs
+     </h2>
+     <p class="text-yellow-300 text-sm mt-6">
+      Top employers actively hire ICMAB CMAs across all industry sectors.
+     </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+     <div class="bg-white/8 hover:bg-white/14 border border-white/10 rounded-sm p-6 text-white transition-all reveal-scale group">
+      <div class="text-3xl mb-3">
+       💼
+      </div>
+      <h5 class="font-oswald font-bold text-lg mb-2 group-hover:text-yellow-300 transition-colors">
+       Financial Services
+      </h5>
+      <p class="text-white/65 text-sm leading-relaxed">
+       Banks, NBFIs, insurance companies and investment firms seeking
+              CMAs for top finance leadership roles.
+      </p>
+     </div>
+     <div class="bg-white/8 hover:bg-white/14 border border-white/10 rounded-sm p-6 text-white transition-all reveal-scale group">
+      <div class="text-3xl mb-3">
+       🏭
+      </div>
+      <h5 class="font-oswald font-bold text-lg mb-2 group-hover:text-yellow-300 transition-colors">
+       Manufacturing &amp; Industry
+      </h5>
+      <p class="text-white/65 text-sm leading-relaxed">
+       Cost management and operational efficiency roles in major
+              industrial and garments organizations.
+      </p>
+     </div>
+     <div class="bg-white/8 hover:bg-white/14 border border-white/10 rounded-sm p-6 text-white transition-all reveal-scale group">
+      <div class="text-3xl mb-3">
+       🏛️
+      </div>
+      <h5 class="font-oswald font-bold text-lg mb-2 group-hover:text-yellow-300 transition-colors">
+       Government &amp; Public Sector
+      </h5>
+      <p class="text-white/65 text-sm leading-relaxed">
+       Statutory bodies, ministries, and public enterprises hiring CMAs
+              for financial governance roles.
+      </p>
+     </div>
+     <div class="bg-white/8 hover:bg-white/14 border border-white/10 rounded-sm p-6 text-white transition-all reveal-scale group">
+      <div class="text-3xl mb-3">
+       📊
+      </div>
+      <h5 class="font-oswald font-bold text-lg mb-2 group-hover:text-yellow-300 transition-colors">
+       Consulting Firms
+      </h5>
+      <p class="text-white/65 text-sm leading-relaxed">
+       Business advisory, audit and management consulting firms require
+              highly skilled CMA professionals.
+      </p>
+     </div>
+     <div class="bg-white/8 hover:bg-white/14 border border-white/10 rounded-sm p-6 text-white transition-all reveal-scale group">
+      <div class="text-3xl mb-3">
+       🌍
+      </div>
+      <h5 class="font-oswald font-bold text-lg mb-2 group-hover:text-yellow-300 transition-colors">
+       Multinational Corporations
+      </h5>
+      <p class="text-white/65 text-sm leading-relaxed">
+       Global companies operating in Bangladesh actively recruit ICMAB
+              CMAs for finance roles.
+      </p>
+     </div>
+     <div class="bg-white/8 hover:bg-white/14 border border-white/10 rounded-sm p-6 text-white transition-all reveal-scale group">
+      <div class="text-3xl mb-3">
+       📱
+      </div>
+      <h5 class="font-oswald font-bold text-lg mb-2 group-hover:text-yellow-300 transition-colors">
+       Technology &amp; Telecom
+      </h5>
+      <p class="text-white/65 text-sm leading-relaxed">
+       IT companies and telecom firms seeking CMA expertise for financial
+              planning and analysis.
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ AFFILIATIONS ═══════════════════════════ -->
+  <div class="w-full">
+   <div class="bg-[#0c68e9] py-10 text-center reveal">
+    <h4 class="font-oswald font-bold text-white text-2xl md:text-3xl">
+     Global &amp; Local Affiliations and Strategic Alliances
+    </h4>
+    <p class="text-white/70 text-sm mt-2">
+     ICMAB is a proud member of IFAC, CAPA, SAFA and strategic ally of CPA
+          Ireland
+    </p>
+   </div>
+   <div class="bg-white py-8 overflow-hidden relative" style="box-shadow:inset 30px 0 20px -10px rgba(255,255,255,1),inset -30px 0 20px -10px rgba(255,255,255,1);">
+    <div class="marquee-track px-10" id="affiliations-track">
+     <a class="partner-logo-box" href="https://www.ifac.org/" target="_blank" rel="noopener"><img alt="IFAC" src="assets/partners/IFAC_6.png"/></a>
+     <a class="partner-logo-box" href="https://www.capa-apac.org/" target="_blank" rel="noopener"><img alt="CAPA" src="assets/partners/CAPA_10.png"/></a>
+     <a class="partner-logo-box" href="https://esafa.org/" target="_blank" rel="noopener"><img alt="SAFA" src="assets/partners/SAFA_4.png"/></a>
+     <a class="partner-logo-box" href="https://www.cpaireland.ie/" target="_blank" rel="noopener"><img alt="CPA Ireland" src="assets/partners/CPA_Ireland_1.png"/></a>
+     <a class="partner-logo-box" href="https://icmab.gov.bd/" target="_blank" rel="noopener"><img alt="ICMAB" src="assets/anima/logo-transparent.png"/></a>
+     <!-- duplicate for seamless loop -->
+     <a class="partner-logo-box" href="https://www.ifac.org/" target="_blank" rel="noopener"><img alt="IFAC" src="assets/partners/IFAC_6.png"/></a>
+     <a class="partner-logo-box" href="https://www.capa-apac.org/" target="_blank" rel="noopener"><img alt="CAPA" src="assets/partners/CAPA_10.png"/></a>
+     <a class="partner-logo-box" href="https://esafa.org/" target="_blank" rel="noopener"><img alt="SAFA" src="assets/partners/SAFA_4.png"/></a>
+     <a class="partner-logo-box" href="https://www.cpaireland.ie/" target="_blank" rel="noopener"><img alt="CPA Ireland" src="assets/partners/CPA_Ireland_1.png"/></a>
+     <a class="partner-logo-box" href="https://icmab.gov.bd/" target="_blank" rel="noopener"><img alt="ICMAB" src="assets/anima/logo-transparent.png"/></a>
+    </div>
+   </div>
+  </div>
+  <!-- ══════════════════════════════ PROMO VIDEOS ═══════════════════════════ -->
+  <section class="py-14 bg-white">
+   <div class="max-w-[1100px] mx-auto px-6">
+    <div class="text-center mb-8 reveal">
+     <h2 class="font-oswald font-bold text-[32px] md:text-4xl section-title center grad-text inline-block">
+      ICMAB Promo Videos
+     </h2>
+     <p class="text-gray-500 text-sm mt-3">Official videos from ICMAB Welcome Book &amp; Digital Experience</p>
+    </div>
+    <div class="promo-videos-grid reveal">
+     <div class="promo-vid-card" onclick="playPromoVideo('NoAEki7UCXM')">
+      <img alt="ICMAB Promo 1" src="https://img.youtube.com/vi/NoAEki7UCXM/hqdefault.jpg"/>
+      <div class="play-icon"><span>▶</span></div>
+     </div>
+     <div class="promo-vid-card" onclick="playPromoVideo('smpy-EuYLm4')">
+      <img alt="ICMAB Promo 2" src="https://img.youtube.com/vi/smpy-EuYLm4/hqdefault.jpg"/>
+      <div class="play-icon"><span>▶</span></div>
+     </div>
+     <div class="promo-vid-card" onclick="playPromoVideo('Q3O2YE3zcyw')">
+      <img alt="ICMAB Promo 3" src="https://img.youtube.com/vi/Q3O2YE3zcyw/hqdefault.jpg"/>
+      <div class="play-icon"><span>▶</span></div>
+     </div>
+     <div class="promo-vid-card" onclick="playPromoVideo('WFBUwG3zg1o')">
+      <img alt="ICMAB Promo 4" src="https://img.youtube.com/vi/WFBUwG3zg1o/hqdefault.jpg"/>
+      <div class="play-icon"><span>▶</span></div>
+     </div>
+     <div class="promo-vid-card" onclick="playPromoVideo('T6YoGDHfg44')">
+      <img alt="ICMAB Promo 5" src="https://img.youtube.com/vi/T6YoGDHfg44/hqdefault.jpg"/>
+      <div class="play-icon"><span>▶</span></div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ FAQ ════════════════════════════════════ -->
+  <section class="py-14 bg-gray-50">
+   <div class="max-w-[900px] mx-auto px-6">
+    <div class="text-center mb-10 reveal">
+     <h2 class="font-oswald font-bold text-[36px] md:text-5xl section-title center grad-text inline-block">
+      Frequently Asked Questions
+     </h2>
+    </div>
+    <div class="flex flex-col gap-3" id="faq-container">
+     <div class="faq-item bg-white border border-gray-200 rounded-sm overflow-hidden reveal" id="faq-0">
+      <div class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-gray-50" onclick="toggleFaq(0)" role="button">
+       <h6 class="text-base md:text-lg font-semibold leading-snug flex-1 pr-4">
+        What is the admission fee for the CMA Course?
+       </h6>
+       <svg class="faq-icon w-5 h-5 shrink-0 text-[#0c68e9]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        </path>
+       </svg>
+      </div>
+      <div class="faq-answer">
+       <p class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+        The admission fee for the CMA course is Tk. 27,000/-. Other fees
+                include registration, tuition, and examination fees. Please
+                visit the Fees &amp; Charges section for a complete breakdown.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item bg-white border border-gray-200 rounded-sm overflow-hidden reveal" id="faq-1">
+      <div class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-gray-50" onclick="toggleFaq(1)" role="button">
+       <h6 class="text-base md:text-lg font-semibold leading-snug flex-1 pr-4">
+        Does ICMAB solely offer Cost and Management Accountant (CMA)
+                certifications?
+       </h6>
+       <svg class="faq-icon w-5 h-5 shrink-0 text-[#0c68e9]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        </path>
+       </svg>
+      </div>
+      <div class="faq-answer">
+       <p class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+        Yes, ICMAB is the sole authority that offers and confers the
+                Cost and Management Accountant (CMA) certification in
+                Bangladesh. No other body can legally offer this designation in
+                the country.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item bg-white border border-gray-200 rounded-sm overflow-hidden reveal" id="faq-2">
+      <div class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-gray-50" onclick="toggleFaq(2)" role="button">
+       <h6 class="text-base md:text-lg font-semibold leading-snug flex-1 pr-4">
+        Is ICMAB a government organization?
+       </h6>
+       <svg class="faq-icon w-5 h-5 shrink-0 text-[#0c68e9]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        </path>
+       </svg>
+      </div>
+      <div class="faq-answer">
+       <p class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+        ICMAB is a statutory organization constituted by the Government
+                of Bangladesh and administered under the Ministry of Commerce,
+                Government of the People's Republic of Bangladesh.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item bg-white border border-gray-200 rounded-sm overflow-hidden reveal" id="faq-3">
+      <div class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-gray-50" onclick="toggleFaq(3)" role="button">
+       <h6 class="text-base md:text-lg font-semibold leading-snug flex-1 pr-4">
+        Is CMA a government degree?
+       </h6>
+       <svg class="faq-icon w-5 h-5 shrink-0 text-[#0c68e9]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        </path>
+       </svg>
+      </div>
+      <div class="faq-answer">
+       <p class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+        No. CMA is a professional certification — not a government
+                academic degree. However, it is legally recognized both locally
+                in Bangladesh and globally by international accounting bodies
+                like IFAC.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item bg-white border border-gray-200 rounded-sm overflow-hidden reveal" id="faq-4">
+      <div class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-gray-50" onclick="toggleFaq(4)" role="button">
+       <h6 class="text-base md:text-lg font-semibold leading-snug flex-1 pr-4">
+        Is it possible to complete the CMA course alongside a full-time
+                job?
+       </h6>
+       <svg class="faq-icon w-5 h-5 shrink-0 text-[#0c68e9]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        </path>
+       </svg>
+      </div>
+      <div class="faq-answer">
+       <p class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+        Yes, the correspondence/online system allows students to
+                complete the CMA course alongside a full-time job. Classes are
+                held during evenings and weekends, and a fully digital
+                e-learning platform is available.
+       </p>
+      </div>
+     </div>
+     <div class="faq-item bg-white border border-gray-200 rounded-sm overflow-hidden reveal" id="faq-5">
+      <div class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-gray-50" onclick="toggleFaq(5)" role="button">
+       <h6 class="text-base md:text-lg font-semibold leading-snug flex-1 pr-4">
+        What are the minimum qualifications to enroll in the CMA
+                program?
+       </h6>
+       <svg class="faq-icon w-5 h-5 shrink-0 text-[#0c68e9]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M12 4v16m8-8H4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+        </path>
+       </svg>
+      </div>
+      <div class="faq-answer">
+       <p class="px-5 pb-5 text-gray-600 text-sm leading-relaxed">
+        Minimum qualification is HSC (Higher Secondary Certificate) or
+                equivalent. However, graduates from any discipline are also
+                welcome to apply. Please refer to the CMA Entry guidelines for
+                complete details.
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="text-center mt-8">
+     <a class="inline-flex items-center gap-2 font-bold text-sm border border-gray-300 px-5 py-2.5 rounded-sm hover:bg-gray-100 font-oswald" href="https://icmab.gov.bd/faqs/">
+      View All FAQs →
+     </a>
+    </div>
+    <!-- Help section -->
+    <div class="mt-14 bg-gradient-to-br from-[#0c68e9]/5 to-[#021d6f]/5 border border-[#0c68e9]/10 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-8 reveal">
+     <div class="shrink-0 w-[140px] h-[140px] rounded-full overflow-hidden bg-[#0c68e9]/10 flex items-center justify-center shadow-lg">
+      <img alt="AI Assistant" class="w-full h-full object-cover" src="assets/icmab/R.webp"/>
+     </div>
+     <div class="flex-1 text-center md:text-left">
+      <h4 class="font-oswald font-bold text-2xl mb-2">
+       How can we help?
+      </h4>
+      <p class="text-gray-600 text-sm leading-relaxed mb-6 max-w-[480px]">
+       Get your questions answered instantly by our AI-powered assistant,
+              or contact a human specialist during business hours.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+       <button class="inline-flex items-center gap-2 bg-[#0c68e9] text-white font-oswald font-bold text-sm px-6 py-3 rounded-sm hover:bg-[#0c44a8] transition-colors" onclick="openChat()">
+        💬 Chat with AI
+       </button>
+       <a class="inline-flex items-center text-[#0c68e9] font-bold text-sm underline underline-offset-4 hover:text-[#021d6f]" href="https://icmab.gov.bd/Contact-Us-2026/">
+        Request Human Contact
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- ══════════════════════════════ FOOTER ════════════════════════════════ -->
+  <footer class="bg-[#021d6f] text-white">
+   <!-- Top banner -->
+   <div class="bg-[#0c68e9] py-8">
+    <div class="max-w-[1100px] mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
+     <div>
+      <h4 class="font-oswald font-bold text-2xl">
+       Ready to Start Your CMA Journey?
+      </h4>
+      <p class="text-white/70 text-sm mt-1">
+       Join 30,000+ students and 2,000+ professionals who chose ICMAB
+      </p>
+     </div>
+     <a class="bg-yellow-400 text-[#021d6f] font-oswald font-bold px-6 py-3 rounded-sm hover:bg-yellow-300 transition-colors shrink-0" href="https://erp.icmab.gov.bd/">
+      Apply Now →
+     </a>
+    </div>
+   </div>
+   <!-- Main footer -->
+   <div class="max-w-[1100px] mx-auto px-6 py-12">
+    <div class="flex flex-wrap -m-4">
+     <!-- Logo + about -->
+     <div class="w-full md:w-3/12 p-4">
+      <a href="/">
+       <img alt="ICMAB Logo" class="h-12 w-auto object-contain mb-4" src="assets/icmab/icmab-logo.png"/>
+      </a>
+      <p class="text-white/65 text-sm leading-relaxed">
+       The Institute of Cost and Management Accountants of Bangladesh
+              (ICMAB) is the national body offering professional CMA
+              certification since 1958.
+      </p>
+      <div class="flex gap-2 mt-5">
+       <a aria-label="Facebook" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" href="https://www.facebook.com/icmabofficial">
+        <svg class="w-4 h-4" fill="white" viewbox="0 0 24 24">
+         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+         </path>
+        </svg>
+       </a>
+       <a aria-label="LinkedIn" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" href="https://www.linkedin.com/company/the-institute-of-cost-and-management-accountants">
+        <svg class="w-4 h-4" fill="white" viewbox="0 0 24 24">
+         <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z">
+         </path>
+         <circle cx="4" cy="4" fill="white" r="2">
+         </circle>
+        </svg>
+       </a>
+       <a aria-label="Twitter" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" href="#">
+        <svg class="w-4 h-4" fill="white" viewbox="0 0 24 24">
+         <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+         </path>
+        </svg>
+       </a>
+       <a aria-label="YouTube" class="w-9 h-9 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors" href="#">
+        <svg class="w-4 h-4" fill="white" viewbox="0 0 24 24">
+         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z">
+         </path>
+         <polygon fill="#021d6f" points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02">
+         </polygon>
+        </svg>
+       </a>
+      </div>
+     </div>
+     <!-- About -->
+     <div class="w-full md:w-2/12 p-4">
+      <h5 class="font-oswald font-bold text-sm tracking-[2px] uppercase mb-5 text-yellow-400">
+       About Us
+      </h5>
+      <div class="flex flex-col gap-3 text-sm">
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/about-us/">
+        The Institute
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/management/">
+        Management
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/presidents-desk/">
+        President's Desk
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/campus-life/">
+        Campus Life
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/Contact-Us-2026/">
+        Contact Us
+       </a>
+      </div>
+     </div>
+     <!-- Students -->
+     <div class="w-full md:w-2/12 p-4">
+      <h5 class="font-oswald font-bold text-sm tracking-[2px] uppercase mb-5 text-yellow-400">
+       Students
+      </h5>
+      <div class="flex flex-col gap-3 text-sm">
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/tab/2/">
+        CMA Program
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/tab/3/">
+        Fees &amp; Charges
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/notice/">
+        Notice Board
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/downloads/">
+        Download Forms
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/exam-schedule/">
+        Exam Schedule
+       </a>
+      </div>
+     </div>
+     <!-- Members -->
+     <div class="w-full md:w-2/12 p-4">
+      <h5 class="font-oswald font-bold text-sm tracking-[2px] uppercase mb-5 text-yellow-400">
+       Members
+      </h5>
+      <div class="flex flex-col gap-3 text-sm">
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/membership/">
+        Membership
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/desk-of-members-affair/">
+        Member's Affair
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/cpd-events/">
+        CPD Events
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/members-directory/">
+        Directory
+       </a>
+       <a class="text-white/65 hover:text-yellow-300 transition-colors" href="https://icmab.gov.bd/journal/">
+        Journal
+       </a>
+      </div>
+     </div>
+     <!-- Contact -->
+     <div class="w-full md:w-3/12 p-4">
+      <h5 class="font-oswald font-bold text-sm tracking-[2px] uppercase mb-5 text-yellow-400">
+       Contact
+      </h5>
+      <div class="flex flex-col gap-3 text-sm text-white/65">
+       <div class="flex items-start gap-2">
+        <span>
+         📍
+        </span>
+        <span>
+         CMA Bhaban, Nilufar Square, Dhaka-1207, Bangladesh
+        </span>
+       </div>
+       <div class="flex items-start gap-2">
+        <span>
+         📞
+        </span>
+        <a class="hover:text-yellow-300" href="tel:+88029119581">
+         +880-2-9119581
+        </a>
+       </div>
+       <div class="flex items-start gap-2">
+        <span>
+         📠
+        </span>
+        <span>
+         +880-2-9134759
+        </span>
+       </div>
+       <div class="flex items-start gap-2">
+        <span>
+         ✉️
+        </span>
+        <a class="hover:text-yellow-300" href="mailto:info@icmab.org.bd">
+         info@icmab.org.bd
+        </a>
+       </div>
+       <div class="flex items-start gap-2">
+        <span>
+         🌐
+        </span>
+        <a class="hover:text-yellow-300" href="https://icmab.gov.bd">
+         www.icmab.gov.bd
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Bottom bar -->
+   <div class="border-t border-white/10 py-4">
+    <div class="max-w-[1100px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/40">
+     <span>
+      © 2026 Institute of Cost and Management Accountants of Bangladesh.
+            All Rights Reserved.
+     </span>
+     <div class="flex gap-4">
+      <a class="hover:text-yellow-300" href="#">
+       Privacy Policy
+      </a>
+      <a class="hover:text-yellow-300" href="#">
+       Terms of Use
+      </a>
+      <a class="hover:text-yellow-300" href="#">
+       Sitemap
+      </a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- ══════════════════════════════ FLOATING CHAT BUTTONS ══════════════════ -->
+  <!-- Notification ping bubble -->
+  <div class="fixed right-5 bottom-[88px] z-[1300]">
+   <button aria-label="Chat with us" class="relative w-12 h-12 bg-white border-2 border-[#0c68e9] text-[#0c68e9] rounded-full flex items-center justify-center shadow-xl hover:bg-[#eff6ff] transition-all" onclick="openChat()">
+    <div class="absolute inset-0 rounded-full bg-[#0c68e9]/20 ping-dot">
+    </div>
+    <svg class="w-5 h-5 relative z-10" fill="currentColor" viewbox="0 0 24 24">
+     <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z">
+     </path>
+    </svg>
+    <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[9px] font-bold rounded-full flex items-center justify-center">
+     1
+    </span>
+   </button>
+  </div>
+  <!-- Main messenger button -->
+  <div class="fixed right-5 bottom-5 z-[1300]">
+   <button aria-label="Open chat" class="w-14 h-14 flex items-center justify-center rounded-full bg-[#0c68e9] text-white shadow-2xl hover:bg-[#0c44a8] transition-all hover:scale-110" onclick="openChat()">
+    <svg class="w-6 h-6" fill="white" viewbox="0 0 24 24">
+     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z">
+     </path>
+    </svg>
+   </button>
+  </div>
+  <!-- ══════════════════════════════ CHAT PANEL ═════════════════════════════ -->
+  <div class="fixed bottom-24 right-5 z-[1400] w-[340px] max-w-[calc(100vw-20px)] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-100" id="chat-panel">
+   <!-- Header -->
+   <div class="bg-gradient-to-r from-[#0c68e9] to-[#021d6f] text-white px-4 py-4">
+    <div class="flex items-center justify-between">
+     <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-white/20 rounded-full overflow-hidden">
+       <img alt="" class="w-full h-full object-cover" src="assets/icmab/R.webp"/>
+      </div>
+      <div>
+       <p class="font-oswald font-bold text-sm">
+        ICMAB Support
+       </p>
+       <div class="flex items-center gap-1.5">
+        <div class="w-1.5 h-1.5 bg-green-400 rounded-full">
+        </div>
+        <span class="text-[11px] text-white/80">
+         Online — replies instantly
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="flex items-center gap-1">
+      <button class="text-white/60 hover:text-white text-xs px-2 py-1 rounded hover:bg-white/10" onclick="clearChat()" title="Clear chat">
+       🗑
+      </button>
+      <button class="text-white/70 hover:text-white w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10" onclick="closeChat()">
+       ✕
+      </button>
+     </div>
+    </div>
+   </div>
+   <!-- Messages area -->
+   <div aria-live="polite" class="flex-1 overflow-y-auto p-4 flex flex-col gap-3 bg-gray-50" id="chat-messages" style="min-height:250px;max-height:320px;">
+    <!-- Bot welcome messages -->
+    <div class="flex gap-2 items-start">
+     <img alt="" class="w-7 h-7 rounded-full object-cover shrink-0 mt-1" src="assets/icmab/R.webp"/>
+     <div class="bg-white rounded-2xl rounded-tl-none px-3 py-2.5 shadow-sm max-w-[82%]">
+      <p class="text-sm text-gray-800">
+       👋 Hello! Welcome to ICMAB. I'm your AI assistant.
+      </p>
+     </div>
+    </div>
+    <div class="flex gap-2 items-start">
+     <img alt="" class="w-7 h-7 rounded-full object-cover shrink-0 mt-1" src="assets/icmab/R.webp"/>
+     <div class="bg-white rounded-2xl rounded-tl-none px-3 py-2.5 shadow-sm max-w-[82%]">
+      <p class="text-sm text-gray-800">
+       How can I help you today? You can ask about CMA courses,
+              admissions, fees, or anything about ICMAB.
+      </p>
+     </div>
+    </div>
+   </div>
+   <!-- Quick replies -->
+   <div class="bg-white px-3 py-2 border-t border-gray-100 flex flex-wrap gap-2">
+    <button class="text-[11px] bg-[#eff6ff] text-[#0c68e9] font-bold px-3 py-1.5 rounded-full hover:bg-[#dbeafe] transition-colors font-oswald" onclick="sendQuickMsg('Admission fee?')">
+     Admission fee?
+    </button>
+    <button class="text-[11px] bg-[#eff6ff] text-[#0c68e9] font-bold px-3 py-1.5 rounded-full hover:bg-[#dbeafe] transition-colors font-oswald" onclick="sendQuickMsg('How to apply?')">
+     How to apply?
+    </button>
+    <button class="text-[11px] bg-[#eff6ff] text-[#0c68e9] font-bold px-3 py-1.5 rounded-full hover:bg-[#dbeafe] transition-colors font-oswald" onclick="sendQuickMsg('Contact info')">
+     Contact info
+    </button>
+    <button class="text-[11px] bg-[#eff6ff] text-[#0c68e9] font-bold px-3 py-1.5 rounded-full hover:bg-[#dbeafe] transition-colors font-oswald" onclick="sendQuickMsg('Exam schedule?')">
+     Exam schedule?
+    </button>
+   </div>
+   <!-- Input row -->
+   <div class="flex items-center gap-2 px-3 py-3 bg-white border-t border-gray-100">
+    <input class="flex-1 text-sm outline-none bg-transparent text-gray-800 placeholder-gray-400" id="chat-input" onkeydown="if(event.key==='Enter')sendMsg()" placeholder="Type a message…" type="text"/>
+    <button class="w-9 h-9 bg-[#0c68e9] text-white rounded-full flex items-center justify-center hover:bg-[#0c44a8] transition-colors shrink-0" onclick="sendMsg()">
+     <svg class="w-4 h-4" fill="white" viewbox="0 0 24 24">
+      <path d="M2 21l21-9L2 3v7l15 2-15 2z">
+      </path>
+     </svg>
+    </button>
+   </div>
+  </div>
+  <!-- ══════════════════════════════ SCRIPTS ════════════════════════════════ -->
+  <script src="bd-map-data.js">
+  </script>
+  <script>
+   // ─── Drawer ──────────────────────────────────────────────────────────────
+      function openDrawer(){
+        document.getElementById('mobile-drawer').classList.add('open');
+        document.getElementById('drawer-overlay').classList.add('open');
+        document.body.style.overflow='hidden';
+      }
+      function closeDrawer(){
+        document.getElementById('mobile-drawer').classList.remove('open');
+        document.getElementById('drawer-overlay').classList.remove('open');
+        document.body.style.overflow='';
+      }
+      function toggleDrawerGroup(btn){
+        const group=btn.closest('.drawer-group');
+        const sub=group.querySelector('.drawer-sub');
+        group.classList.toggle('open');
+        sub.classList.toggle('open');
+      }
+
+      // ─── Search ───────────────────────────────────────────────────────────────
+      function toggleSearch(){
+        const p=document.getElementById('search-panel');
+        p.classList.toggle('open');
+        if(p.classList.contains('open')) setTimeout(()=>document.getElementById('search-input').focus(),320);
+      }
+      document.addEventListener('keydown',e=>{if(e.key==='Escape'){
+        document.getElementById('search-panel').classList.remove('open');
+        closeChat();
+        closeDrawer();
+        closeWelcomePopup();
+      }});
+
+      // ─── Sticky header shadow ─────────────────────────────────────────────────
+      window.addEventListener('scroll',()=>{
+        document.getElementById('main-header').classList.toggle('scrolled',window.scrollY>50);
+      });
+
+      // ─── Tabs ─────────────────────────────────────────────────────────────────
+      function switchTab(id){
+        document.querySelectorAll('.tab-panel').forEach(p=>p.classList.add('hidden'));
+        document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+        const panel=document.getElementById('tab-'+id);
+        if(panel) panel.classList.remove('hidden');
+        const btn=document.querySelector('[data-tab="'+id+'"]');
+        if(btn) btn.classList.add('active');
+      }
+
+      // ─── FAQ ──────────────────────────────────────────────────────────────────
+      function toggleFaq(i){
+        const item=document.getElementById('faq-'+i);
+        const ans=item.querySelector('.faq-answer');
+        const icon=item.querySelector('.faq-icon');
+        const wasOpen=item.classList.contains('open');
+        // close all
+        document.querySelectorAll('.faq-item').forEach(el=>{
+          el.classList.remove('open','border-blue-500');
+          el.style.borderColor='';
+          el.querySelector('.faq-answer').classList.remove('open');
+          el.querySelector('.faq-icon').style.transform='';
+        });
+        if(!wasOpen){
+          item.classList.add('open');
+          item.style.borderColor='#0c68e9';
+          ans.classList.add('open');
+          icon.style.transform='rotate(45deg)';
+        }
+      }
+
+      // ─── Welcome popup ────────────────────────────────────────────────────────
+      let welcomeSlideIdx=0;
+      let welcomeSlideTimer=null;
+      function showWelcomePopup(){
+        if(localStorage.getItem('icmab_popup_dismissed')==='1') return;
+        const popup=document.getElementById('welcome-popup');
+        if(!popup) return;
+        popup.classList.add('show');
+        document.body.style.overflow='hidden';
+        startWelcomeSlider();
+      }
+      function closeWelcomePopup(){
+        const popup=document.getElementById('welcome-popup');
+        const dont=document.getElementById('welcome-dont-show');
+        if(dont&&dont.checked) localStorage.setItem('icmab_popup_dismissed','1');
+        if(popup) popup.classList.remove('show');
+        document.body.style.overflow='';
+        if(welcomeSlideTimer) clearInterval(welcomeSlideTimer);
+      }
+      function startWelcomeSlider(){
+        const slides=document.querySelectorAll('.welcome-slide');
+        if(!slides.length) return;
+        if(welcomeSlideTimer) clearInterval(welcomeSlideTimer);
+        welcomeSlideTimer=setInterval(()=>{
+          slides[welcomeSlideIdx].classList.remove('active');
+          welcomeSlideIdx=(welcomeSlideIdx+1)%slides.length;
+          slides[welcomeSlideIdx].classList.add('active');
+        },3500);
+      }
+      document.getElementById('welcome-popup').addEventListener('click',e=>{
+        if(e.target.id==='welcome-popup') closeWelcomePopup();
+      });
+
+      // ─── Promo video controls ─────────────────────────────────────────────────
+      function ytCmd(func){
+        const iframe=document.getElementById('promo-video');
+        if(iframe&&iframe.contentWindow) iframe.contentWindow.postMessage(JSON.stringify({event:'command',func,args:''}),'*');
+      }
+      function toggleV2Play(){
+        const btn=document.getElementById('play-btn2');
+        btn.classList.toggle('vid-paused');
+        ytCmd(btn.classList.contains('vid-paused')?'pauseVideo':'playVideo');
+      }
+      function toggleV2Mute(){
+        const btn=document.getElementById('mute-btn2');
+        btn.classList.toggle('vid-muted');
+        ytCmd(btn.classList.contains('vid-muted')?'mute':'unMute');
+      }
+      function playPromoVideo(id){
+        const iframe=document.getElementById('promo-video');
+        if(!iframe) return;
+        iframe.src=`https://www.youtube.com/embed/${id}?autoplay=1&mute=0&loop=1&playlist=${id}&controls=1&rel=0&enablejsapi=1&modestbranding=1`;
+        document.getElementById('play-btn2').classList.remove('vid-paused');
+        document.getElementById('mute-btn2').classList.remove('vid-muted');
+        iframe.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+
+      setTimeout(showWelcomePopup,1200);
+
+      // ─── Stories carousel ────────────────────────────────────────────────────
+      let storyIdx=0;
+      const stories=[
+        {name:'Md. Abdur Rahman Khan FCMA',tag:'Leadership Success',body:'A distinguished CMA who rose to a key leadership position, driving national fiscal policy and exemplifying the excellence that ICMAB professionals bring to their organizations.'},
+        {name:'Mr. Md. Mamunur Rashid FCMA',tag:'Director, Biman Bangladesh Airlines',body:'ICMAB&#39;s past president appointed as Director at Biman Bangladesh Airlines — a testament to the career-defining power of the CMA designation.'},
+        {name:'Niranjan Chandra Debnath FCMA',tag:'Senior Finance Leader',body:'Successfully leading financial strategy and governance for a major organization, demonstrating the global relevance of ICMAB&#39;s rigorous CMA training.'},
+      ];
+      function renderStory(){
+        const s=stories[storyIdx];
+        document.getElementById('story-text').innerHTML=`
+          <span class="bg-yellow-400 text-[#021d6f] text-xs font-bold px-3 py-1 rounded font-oswald uppercase tracking-wider mb-3 inline-block">${s.tag}</span>
+          <h5 class="text-yellow-300 font-bold text-lg font-oswald mt-2">${s.name}</h5>
+          <p class="text-white/75 text-sm mt-2 leading-relaxed">${s.body}</p>
+          <a href="https://icmab.gov.bd/success-story/" class="inline-flex items-center gap-1 text-yellow-400 text-sm font-bold mt-4 hover:underline">Read Full Story →</a>`;
+        // dots
+        document.querySelectorAll('.story-dot').forEach((d,i)=>{
+          d.style.background=i===storyIdx?'#facc15':'rgba(255,255,255,.3)';
+          d.style.width=i===storyIdx?'24px':'8px';
+        });
+      }
+      function gotoStory(i){
+        storyIdx=i;
+        document.getElementById('story-inner').style.transform=`translateX(-${i*(100/3)}%)`;
+        renderStory();
+      }
+      function nextStory(){gotoStory((storyIdx+1)%stories.length);}
+      function prevStory(){gotoStory((storyIdx-1+stories.length)%stories.length);}
+      // auto-rotate
+      setInterval(()=>nextStory(),5000);
+
+      // ─── Chat ────────────────────────────────────────────────────────────────
+      function openChat(){document.getElementById('chat-panel').classList.add('open');setTimeout(()=>document.getElementById('chat-input').focus(),300);}
+      function closeChat(){document.getElementById('chat-panel').classList.remove('open');}
+      function clearChat(){
+        const box=document.getElementById('chat-messages');
+        box.innerHTML='';
+        addChatMsg('bot','Chat cleared. How can I help you? 😊');
+      }
+
+      const qaMap={
+        'admission fee':'The admission fee for the CMA course is <b>Tk. 27,000/-</b>. Additional fees include tuition and examination charges. Visit the Fees &amp; Charges page for full details.',
+        'how to apply':'You can apply online via the <a href="https://erp.icmab.gov.bd/" class="text-blue-600 underline font-bold" target="_blank">ICMAB ERP Portal</a>, or visit any ICMAB branch office. Admissions open twice a year: Jan–Jun and Jul–Dec sessions.',
+        'contact info':'<b>ICMAB Headquarters:</b><br>CMA Bhaban, Nilufar Square, Dhaka-1207<br>📞 +880-2-9119581<br>✉️ info@icmab.org.bd',
+        'exam schedule':'CMA Examinations are held every 6 months. The next session begins <b>July 2026</b>. Visit <a href="https://icmab.gov.bd/exam-schedule/" class="text-blue-600 underline" target="_blank">Exam Schedule</a> for complete dates.',
+      };
+      function sendQuickMsg(msg){
+        addChatMsg('user',msg);
+        const key=msg.toLowerCase().replace('?','').trim();
+        const resp=Object.entries(qaMap).find(([k])=>key.includes(k));
+        setTimeout(()=>addChatMsg('bot',resp?resp[1]:'Thank you for your message! Our team will respond shortly. You can also call us at +880-2-9119581.'),650);
+      }
+      function sendMsg(){
+        const inp=document.getElementById('chat-input');
+        const txt=inp.value.trim();
+        if(!txt) return;
+        inp.value='';
+        addChatMsg('user',txt);
+        const low=txt.toLowerCase();
+        const resp=Object.entries(qaMap).find(([k])=>low.includes(k));
+        // typing indicator
+        addTyping();
+        setTimeout(()=>{removeTyping();addChatMsg('bot',resp?resp[1]:'Thank you for contacting ICMAB! For detailed queries please visit <a href="https://icmab.gov.bd" class="text-blue-600 underline" target="_blank">icmab.gov.bd</a> or call our helpline.');},900);
+      }
+      function addChatMsg(role,html){
+        const box=document.getElementById('chat-messages');
+        const isUser=role==='user';
+        const div=document.createElement('div');
+        div.className='flex gap-2 items-end'+(isUser?' flex-row-reverse':'');
+        if(isUser){
+          div.innerHTML=`<div class="bg-[#0c68e9] text-white rounded-2xl rounded-br-sm px-3 py-2.5 shadow-sm max-w-[82%] text-sm">${html}</div>`;
+        } else {
+          div.innerHTML=`<img src="assets/icmab/R.webp" class="w-6 h-6 rounded-full object-cover shrink-0"/><div class="bg-white rounded-2xl rounded-bl-sm px-3 py-2.5 shadow-sm max-w-[82%] text-sm text-gray-800 leading-relaxed">${html}</div>`;
+        }
+        box.appendChild(div);
+        box.scrollTop=box.scrollHeight;
+      }
+      let typingEl=null;
+      function addTyping(){
+        const box=document.getElementById('chat-messages');
+        typingEl=document.createElement('div');
+        typingEl.className='flex gap-2 items-end typing-indicator';
+        typingEl.innerHTML=`<img src="assets/icmab/R.webp" class="w-6 h-6 rounded-full object-cover shrink-0"/><div class="bg-white rounded-2xl px-3 py-2.5 shadow-sm text-gray-400 text-sm">typing…</div>`;
+        box.appendChild(typingEl);
+        box.scrollTop=box.scrollHeight;
+      }
+      function removeTyping(){if(typingEl&&typingEl.parentNode){typingEl.parentNode.removeChild(typingEl);typingEl=null;}}
+
+      // ─── About ICMAB tabs ─────────────────────────────────────────────────────
+      function switchAboutTab(id){
+        document.querySelectorAll('.about-tab').forEach(t=>t.classList.toggle('active',t.dataset.about===id));
+        document.querySelectorAll('.about-tab-panel').forEach(p=>p.classList.toggle('active',p.id==='about-'+id));
+      }
+
+      // ─── Nationwide map (64 districts + branch pins) ──────────────────────────
+      const mapTooltip=document.getElementById('map-tooltip');
+      const PIN_D='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z';
+      function showMapTooltip(loc,evt){
+        if(!mapTooltip) return;
+        mapTooltip.innerHTML=`<span class="tag ${loc.type}">${loc.tag}</span><h6>${loc.name}</h6><p>${loc.address}<br>📞 ${loc.phone}</p>`;
+        mapTooltip.classList.add('show');
+        positionMapTooltip(evt);
+      }
+      function positionMapTooltip(evt){
+        const section=document.getElementById('bd-map-section');
+        if(!section||!mapTooltip) return;
+        const rect=section.getBoundingClientRect();
+        const x=(evt.clientX||0)-rect.left;
+        const y=(evt.clientY||0)-rect.top;
+        mapTooltip.style.left=Math.min(Math.max(x-85,8),rect.width-190)+'px';
+        mapTooltip.style.top=Math.max(y-110,8)+'px';
+      }
+      function hideMapTooltip(){
+        if(mapTooltip) mapTooltip.classList.remove('show');
+        document.querySelectorAll('.map-marker').forEach(m=>m.classList.remove('active'));
+      }
+      function addMapMarker(svg,loc){
+        const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+        g.setAttribute('class','map-marker');
+        g.setAttribute('transform',`translate(${loc.x},${loc.y})`);
+        g.setAttribute('tabindex','0');
+        g.setAttribute('role','button');
+        g.setAttribute('aria-label',loc.name);
+        const ring1=document.createElementNS('http://www.w3.org/2000/svg','circle');
+        ring1.setAttribute('class','pin-ring'); ring1.setAttribute('r','22');
+        ring1.setAttribute('fill','rgba(7,13,69,0.08)'); ring1.setAttribute('stroke','rgba(7,13,69,0.35)');
+        ring1.setAttribute('stroke-width','1.5'); ring1.setAttribute('stroke-dasharray','4,4');
+        const ring2=document.createElementNS('http://www.w3.org/2000/svg','circle');
+        ring2.setAttribute('class','pin-ring'); ring2.setAttribute('r','14');
+        ring2.setAttribute('fill','rgba(7,13,69,0.1)'); ring2.setAttribute('stroke','rgba(7,13,69,0.4)'); ring2.setAttribute('stroke-width','1');
+        const pin=document.createElementNS('http://www.w3.org/2000/svg','path');
+        pin.setAttribute('class','pin-icon'); pin.setAttribute('transform','translate(-12,-22)'); pin.setAttribute('d',PIN_D);
+        g.append(ring1,ring2,pin);
+        const activate=e=>{document.querySelectorAll('.map-marker').forEach(m=>m.classList.remove('active'));g.classList.add('active');showMapTooltip(loc,e);};
+        g.addEventListener('mouseenter',activate);
+        g.addEventListener('mousemove',positionMapTooltip);
+        g.addEventListener('click',activate);
+        g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();activate(e);}});
+        svg.appendChild(g);
+      }
+      function initBangladeshMap(){
+        const svg=document.getElementById('bd-map-svg');
+        if(!svg||!window.BD_MAP_PATHS) return;
+        const lands=document.createElementNS('http://www.w3.org/2000/svg','g');
+        lands.setAttribute('class','bd-lands');
+        window.BD_MAP_PATHS.forEach(d=>{
+          const p=document.createElementNS('http://www.w3.org/2000/svg','path');
+          p.setAttribute('class','bd-land'); p.setAttribute('d',d);
+          lands.appendChild(p);
+        });
+        svg.appendChild(lands);
+        const markers=document.createElementNS('http://www.w3.org/2000/svg','g');
+        markers.setAttribute('class','markers');
+        svg.appendChild(markers);
+        (window.BD_MAP_MARKERS||[]).forEach(loc=>addMapMarker(markers,loc));
+        document.getElementById('bd-map-section').addEventListener('click',e=>{
+          if(!e.target.closest('.map-marker')) hideMapTooltip();
+        });
+      }
+
+      // ─── Scroll reveal ────────────────────────────────────────────────────────
+      const revealObs=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target);}});
+      },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+      document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(el=>revealObs.observe(el));
+
+      initBangladeshMap();
+  </script>
+ </body>
+</html>

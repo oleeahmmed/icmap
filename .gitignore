@@ -1,0 +1,29 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Env & secrets
+.env
+.env.*
+*.pem
+
+# Dependencies
+node_modules/
+
+# Logs & cache
+*.log
+npm-debug.log*
+.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/

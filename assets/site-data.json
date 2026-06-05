@@ -1,0 +1,223 @@
+{
+  "partners": [
+    {
+      "id": 10,
+      "creator": "edu@icmab.gov.bd",
+      "name": "CAPA",
+      "partner_type": "global_partner",
+      "logo": "https://web.icmab.gov.bd/media/assets/uploads/partners/file/logo_s1kS68b.png",
+      "website": "https://www.capa-apac.org/",
+      "created_at": "2025-11-26T12:57:51.682635+06:00",
+      "updated_at": "2025-11-26T12:58:16.006300+06:00",
+      "local_logo": "assets/partners/CAPA_10.png"
+    },
+    {
+      "id": 6,
+      "creator": "my-admin@icmab.com",
+      "name": "IFAC",
+      "partner_type": "global_partner",
+      "logo": "https://web.icmab.gov.bd/media/assets/uploads/partners/file/IFAC-mobile.png",
+      "website": "https://www.ifac.org/",
+      "created_at": "2025-10-14T13:34:17.390469+06:00",
+      "updated_at": "2025-10-27T11:52:45.658554+06:00",
+      "local_logo": "assets/partners/IFAC_6.png"
+    },
+    {
+      "id": 4,
+      "creator": "my-admin@icmab.com",
+      "name": "SAFA",
+      "partner_type": "global_partner",
+      "logo": "https://web.icmab.gov.bd/media/assets/uploads/partners/file/466674159_517540531273141_9126199239324530995_n-removebg-preview.png",
+      "website": "https://esafa.org/",
+      "created_at": "2025-10-14T13:23:55.207810+06:00",
+      "updated_at": "2025-10-27T11:55:47.834707+06:00",
+      "local_logo": "assets/partners/SAFA_4.png"
+    },
+    {
+      "id": 1,
+      "creator": "my-admin@icmab.com",
+      "name": "CPA Ireland",
+      "partner_type": "global_partner",
+      "logo": "https://web.icmab.gov.bd/media/assets/uploads/partners/file/cpa_logo.png",
+      "website": "https://www.cpaireland.ie/",
+      "created_at": "2025-10-14T13:19:47.508594+06:00",
+      "updated_at": "2025-10-27T11:57:52.356301+06:00",
+      "local_logo": "assets/partners/CPA_Ireland_1.png"
+    }
+  ],
+  "welcome": [
+    {
+      "id": 1,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-0_kNd3KAj.jpg",
+      "order": 1,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:43:49.796661+06:00",
+      "local_image": "assets/welcome/welcome_1.jpg"
+    },
+    {
+      "id": 2,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-1.jpg",
+      "order": 2,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:43:58.724966+06:00",
+      "local_image": "assets/welcome/welcome_2.jpg"
+    },
+    {
+      "id": 3,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-3.jpg",
+      "order": 3,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:44:06.388252+06:00",
+      "local_image": "assets/welcome/welcome_3.jpg"
+    },
+    {
+      "id": 4,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-3_uRoaORS.jpg",
+      "order": 4,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:44:16.415042+06:00",
+      "local_image": "assets/welcome/welcome_4.jpg"
+    },
+    {
+      "id": 5,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-5.jpg",
+      "order": 5,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:44:33.757159+06:00",
+      "local_image": "assets/welcome/welcome_5.jpg"
+    },
+    {
+      "id": 6,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-6.jpg",
+      "order": 6,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:44:42.156842+06:00",
+      "local_image": "assets/welcome/welcome_6.jpg"
+    },
+    {
+      "id": 7,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-7.jpg",
+      "order": 7,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:44:49.012384+06:00",
+      "local_image": "assets/welcome/welcome_7.jpg"
+    },
+    {
+      "id": 8,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-8.jpg",
+      "order": 8,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:44:56.181609+06:00",
+      "local_image": "assets/welcome/welcome_8.jpg"
+    },
+    {
+      "id": 9,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-9.jpg",
+      "order": 9,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:45:03.656357+06:00",
+      "local_image": "assets/welcome/welcome_9.jpg"
+    },
+    {
+      "id": 10,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-10.jpg",
+      "order": 10,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:45:10.875704+06:00",
+      "local_image": "assets/welcome/welcome_10.jpg"
+    },
+    {
+      "id": 11,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-11.jpg",
+      "order": 11,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:45:30.213577+06:00",
+      "local_image": "assets/welcome/welcome_11.jpg"
+    },
+    {
+      "id": 12,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-12.jpg",
+      "order": 12,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:45:39.516131+06:00",
+      "local_image": "assets/welcome/welcome_12.jpg"
+    },
+    {
+      "id": 13,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-13.jpg",
+      "order": 13,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:45:46.990028+06:00",
+      "local_image": "assets/welcome/welcome_13.jpg"
+    },
+    {
+      "id": 14,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-14.jpg",
+      "order": 14,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:45:55.102896+06:00",
+      "local_image": "assets/welcome/welcome_14.jpg"
+    },
+    {
+      "id": 15,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-15.jpg",
+      "order": 15,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:46:02.089274+06:00",
+      "local_image": "assets/welcome/welcome_15.jpg"
+    },
+    {
+      "id": 16,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-16.jpg",
+      "order": 16,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:46:09.079507+06:00",
+      "local_image": "assets/welcome/welcome_16.jpg"
+    },
+    {
+      "id": 17,
+      "image": "https://web.icmab.gov.bd/media/assets/uploads/wellcome_book/files/Welcome-Book-images-17.jpg",
+      "order": 17,
+      "is_cover": false,
+      "uploaded_at": "2025-10-30T14:46:16.441208+06:00",
+      "local_image": "assets/welcome/welcome_17.jpg"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "video_url": "https://www.youtube.com/watch?v=NoAEki7UCXM",
+      "created_at": "2025-10-30T14:48:15.477201+06:00",
+      "updated_at": "2025-10-30T14:48:15.477241+06:00",
+      "youtube_id": "NoAEki7UCXM"
+    },
+    {
+      "id": 2,
+      "video_url": "https://www.youtube.com/watch?v=smpy-EuYLm4",
+      "created_at": "2025-10-30T14:48:27.580685+06:00",
+      "updated_at": "2025-10-30T14:48:27.580726+06:00",
+      "youtube_id": "smpy-EuYLm4"
+    },
+    {
+      "id": 6,
+      "video_url": "https://www.youtube.com/watch?v=Q3O2YE3zcyw",
+      "created_at": "2026-01-09T21:35:53.855385+06:00",
+      "updated_at": "2026-01-09T21:35:53.855430+06:00",
+      "youtube_id": "Q3O2YE3zcyw"
+    },
+    {
+      "id": 7,
+      "video_url": "https://www.youtube.com/watch?v=WFBUwG3zg1o",
+      "created_at": "2026-01-09T21:36:10.999085+06:00",
+      "updated_at": "2026-01-09T21:36:10.999129+06:00",
+      "youtube_id": "WFBUwG3zg1o"
+    },
+    {
+      "id": 8,
+      "video_url": "https://www.youtube.com/watch?v=T6YoGDHfg44&t=2s",
+      "created_at": "2026-01-09T21:36:23.703514+06:00",
+      "updated_at": "2026-01-09T21:36:23.703554+06:00",
+      "youtube_id": "T6YoGDHfg44"
+    }
+  ]
+}
